@@ -3,7 +3,7 @@ from enum import IntEnum
 
 BOT_TOKEN = "7680162257:AAFiccfuZXBoUqq0aIaiNFdQqD-D5sOz9x0"        
 OWNER_ID = 7463989072  
-OWNER_LANG = "en"            
+OWNER_LANG = "ru"            
 GROUP_CHAT_ID = -1001234567890   
 GROUP_INVITE_LINK = "https://t.me/+xxxx"  
 

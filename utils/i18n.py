@@ -66,6 +66,11 @@ locales: Dict[str, Dict[str, str]] = {
         "you_are_close": "Вы находитесь рядом! Включите звуковой пароль, оглянитесь и найдите друг друга.",
         "play_sound_caption": "Проигрывается звуковой пароль... Пожалуйста, оглянитесь вокруг!",
         "invite_text": "Перейдите по ссылке {invite_link}, чтобы продолжить общение в группе {group_name}.",
+        "live_location_howto": (
+            "Отправьте, пожалуйста, трансляцию вашей live-локации боту.\n\n"
+            "📎 → «Геопозиция» → «Трансляция геопозиции в реальном времени» → "
+            "выбор времени → отправить."
+        ),
     },
     "en": {
         "start_button": "START",
@@ -131,6 +136,10 @@ locales: Dict[str, Dict[str, str]] = {
         "you_are_close": "You are nearby! Turn on the sound password, look around and find each other.",
         "play_sound_caption": "The sound password is playing... Please look around!",
         "invite_text": "Follow the link {invite_link} to continue the conversation in the group {group_name}.",
+        "live_location_howto": (
+            "Please share your live location with the bot.\n\n"
+            "📎 → “Location” → “Share live location” → choose duration → send."
+        ),
     },
 }
 

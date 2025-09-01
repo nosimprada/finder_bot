@@ -28,7 +28,7 @@ from utils.finder_store import (
 from utils.i18n import I18N as _I18N, I18n
 from keyboards.markup import (
     kb_finder_welcome,
-    kb_finder_share_location,
+    kb_owner_contact,   # <-- добавили импорт
 )
 from utils.message_log_store import clear_chat, delete_all_logged_messages, delete_logged_bot_messages
 
@@ -71,12 +71,11 @@ async def _send_finder_welcome(message: Message, lang: str, i18n: I18n) -> None:
 
 
 async def _notify_owner_about_finder(bot, i18n: I18n) -> None:
+    """
+    Сообщение владельцу по ТЗ: без упоминания нашедшего.
+    Текст из локалей + указатель на кнопку ниже.
+    """
     text = i18n.t(OWNER_LANG, "owner_found_pet") + "\n\n👇"
-
-    from aiogram.utils.keyboard import InlineKeyboardBuilder
-    kb = InlineKeyboardBuilder()
-    kb.button(text=i18n.t(OWNER_LANG, "contact_action"), callback_data="owner:contact")
-    kb.adjust(1)
 
     photo_path = Path(PET_PHOTO_PATH)
     if photo_path.is_file():
@@ -84,13 +83,13 @@ async def _notify_owner_about_finder(bot, i18n: I18n) -> None:
             chat_id=OWNER_ID,
             photo=FSInputFile(photo_path),
             caption=text,
-            reply_markup=kb.as_markup(),
+            reply_markup=kb_owner_contact(OWNER_LANG, i18n),   # <-- используем клавиатуру из markup
         )
     else:
         await bot.send_message(
             chat_id=OWNER_ID,
             text=text,
-            reply_markup=kb.as_markup(),
+            reply_markup=kb_owner_contact(OWNER_LANG, i18n),   # <-- используем клавиатуру из markup
         )
 
 
@@ -99,7 +98,7 @@ async def _notify_owner_about_finder(bot, i18n: I18n) -> None:
 async def start_any(message: Message):
     uid = message.from_user.id
     if int(uid) == int(OWNER_ID):
-        return  
+        return
 
     arg = _extract_start_arg(message.text)
     lang = _pick_lang(getattr(message.from_user, "language_code", None))
@@ -115,20 +114,13 @@ async def start_any(message: Message):
 
     row = get_finder(uid)
     if not row:
-        return  
+        return
 
     store_set_lang(uid, lang)
 
     cur_stage = get_stage(uid)
     if cur_stage == int(Stage.FINDER_PRESSED_CONTACT_OWNER):
         await message.answer(i18n.t(lang, "owner_alerted"))
-        return
-
-    if cur_stage == int(Stage.OWNER_REQUESTED_FINDER_LOCATION):
-        await message.answer(
-            i18n.t(lang, "location_instruction"),
-            reply_markup=kb_finder_share_location(lang, i18n),
-        )
         return
 
     await _send_finder_welcome(message, lang, i18n)
@@ -145,7 +137,7 @@ async def finder_contact_owner(cb: CallbackQuery):
     if int(uid) == int(OWNER_ID):
         return
 
-    st, _pos = status_of(uid)  
+    st, _pos = status_of(uid)  # 'blocked'|'active'|'queued'|'completed'|'none'
     if st in ("blocked", "active", "queued"):
         try:
             await cb.answer()
