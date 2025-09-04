@@ -10,11 +10,6 @@ def _tg(tg_id: TG) -> str:
     return str(tg_id)
 
 def _stage_to_int(stage: StageLike) -> int:
-    """
-    Нормализует stage -> int.
-    None трактуем как STAGE_DEFAULT (обычно 0 = Stage.NONE).
-    Поддерживает IntEnum и int.
-    """
     if stage is None:
         return int(STAGE_DEFAULT)
     try:
@@ -25,10 +20,6 @@ def _stage_to_int(stage: StageLike) -> int:
 # ---------- базовые CRUD ----------
 
 def ensure_finder(tg_id: TG, lang: Optional[str] = None, stage: StageLike = None) -> None:
-    """
-    Создаёт запись, если её нет. При наличии — опционально обновит lang и/или stage (число).
-    Если stage=None, не трогаем этап (оставляем текущий/дефолтный).
-    """
     init_db()
     with get_conn() as db:
         db.execute("INSERT OR IGNORE INTO finders(tg_id) VALUES(?)", (_tg(tg_id),))
@@ -65,17 +56,15 @@ def get_finder(tg_id: TG) -> Optional[Dict[str, Any]]:
         d["stage"] = int(st) if st is not None else int(STAGE_DEFAULT)
         return d
 
-# ---------- stage helpers ----------
+#stage helpers
 
 def set_stage(tg_id: TG, stage: StageLike) -> None:
-    """Установить текущий этап (число). Передай None, чтобы сбросить в STAGE_DEFAULT (0)."""
     init_db()
     with get_conn() as db:
         ensure_finder(tg_id)
         db.execute("UPDATE finders SET stage=? WHERE tg_id=?", (_stage_to_int(stage), _tg(tg_id)))
 
 def get_stage(tg_id: TG) -> int:
-    """Вернёт текущий этап как int. Если NULL в БД, вернёт STAGE_DEFAULT."""
     init_db()
     with get_conn() as db:
         row = db.execute("SELECT stage FROM finders WHERE tg_id=?", (_tg(tg_id),)).fetchone()
@@ -87,10 +76,6 @@ def reset_stage(tg_id: TG) -> None:
     set_stage(tg_id, STAGE_DEFAULT)
 
 def stage_is(tg_id: TG, *stages: StageLike) -> bool:
-    """
-    Предикат: совпадает ли текущий этап с любым из указанных.
-    Пример: stage_is(tg, Stage.FINDER_ETA_MENU, Stage.SOUND_PLAYING)
-    """
     cur = get_stage(tg_id)
     ints = { _stage_to_int(x) for x in stages if x is not None }
     return cur in ints
@@ -115,7 +100,7 @@ def _shift_after(db, removed_pos: int) -> None:
         (removed_pos,),
     )
 
-# ---------- статус ----------
+#статус
 
 def status_of(tg_id: TG) -> Tuple[str, Optional[int]]:
     """
@@ -168,11 +153,11 @@ def queue_positions() -> Dict[str, int]:
         ).fetchall()
         return {r["tg_id"]: int(r["queue"]) for r in rows}
 
-# ---------- действия ----------
+#действия
 
 def enqueue(tg_id: TG, lang: Optional[str] = None) -> int:
     """
-    Поставить в очередь. Возвращает позицию (1..N).
+    Поставить в очередь. Возвращает позицию (1.)
     """
     init_db()
     with get_conn() as db:
@@ -195,9 +180,6 @@ def enqueue(tg_id: TG, lang: Optional[str] = None) -> int:
         return new_pos
 
 def promote_if_idle() -> Optional[str]:
-    """
-    Если нет активного (queue=1), но есть кто-то в очереди — сделать минимального активным.
-    """
     init_db()
     with get_conn() as db:
         row = db.execute("SELECT tg_id FROM finders WHERE queue = 1").fetchone()

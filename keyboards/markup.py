@@ -10,7 +10,7 @@ def _i18n(i18n: Optional[I18n]) -> I18n:
     return i18n or _I18N
 
 
-# ----- finder side -----
+#finder
 
 def kb_finder_welcome(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
     i18n = _i18n(i18n)
@@ -20,21 +20,23 @@ def kb_finder_welcome(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardM
     return kb.as_markup()
 
 def kb_finder_share_location(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
-    """Кнопка для нашедшего «Поделиться локацией» (колбэк: finder:share_location)."""
     i18n = _i18n(i18n)
     kb = InlineKeyboardBuilder()
     kb.button(text=i18n.t(lang, "share_location"), callback_data="finder:share_location")
     kb.adjust(1)
     return kb.as_markup()
 
+def kb_owner_share_location(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
+    i18n = _i18n(i18n)
+    kb = InlineKeyboardBuilder()
+    kb.button(text=i18n.t(lang, "share_location"), callback_data="owner:share_location")
+    kb.adjust(1)
+    return kb.as_markup()
 
-# ----- owner side -----
+
+#owner
 
 def kb_owner_contact(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
-    """
-    Кнопка «Связаться» для владельца — без привязки к finder_id.
-    Колбэк: owner:contact
-    """
     i18n = _i18n(i18n)
     kb = InlineKeyboardBuilder()
     kb.button(text=i18n.t(lang, "contact_action"), callback_data="owner:contact")
@@ -42,15 +44,60 @@ def kb_owner_contact(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMa
     return kb.as_markup()
 
 
-def kb_owner_action_menu(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
-    """
-    Меню действий владельца:
-    - Отправить мою локацию → owner:send_location
-    - Узнать локацию питомца → owner:ask_location
-    """
+def kb_owner_request_only(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
     i18n = _i18n(i18n)
     kb = InlineKeyboardBuilder()
-    kb.button(text=i18n.t(lang, "send_my_location"), callback_data="owner:send_location")
     kb.button(text=i18n.t(lang, "request_pet_location"), callback_data="owner:ask_location")
+    kb.adjust(1)
+    return kb.as_markup()
+
+
+def kb_owner_arrival_menu(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
+    i18n = _i18n(i18n)
+    kb = InlineKeyboardBuilder()
+    kb.button(text=i18n.t(lang, "arrive_10"), callback_data="owner:eta:10")
+    kb.button(text=i18n.t(lang, "arrive_20"), callback_data="owner:eta:20")
+    kb.button(text=i18n.t(lang, "arrive_30"), callback_data="owner:eta:30")
+    kb.button(text=i18n.t(lang, "start_chat"), callback_data="owner:start_chat")
+    kb.adjust(1)  
+    return kb.as_markup()
+
+
+def kb_owner_chat_consent(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
+    i18n = _i18n(i18n)
+    kb = InlineKeyboardBuilder()
+    kb.button(text=i18n.t(lang, "accept_chat"), callback_data="owner:chat_accept")
+    kb.button(text=i18n.t(lang, "back"),         callback_data="owner:chat_back")
+    kb.adjust(1)
+    return kb.as_markup()
+
+def kb_open_group_link(lang: str, url: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
+    i18n = _i18n(i18n)
+    kb = InlineKeyboardBuilder()
+    kb.button(text=i18n.t(lang, "open_chat"), url=url)
+    kb.adjust(1)
+    return kb.as_markup()
+
+def kb_sound_password(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
+    i18n = _i18n(i18n)
+    kb = InlineKeyboardBuilder()
+    kb.button(text=i18n.t(lang, "sound_password"), callback_data="sound:password")
+    kb.adjust(1)
+    return kb.as_markup()
+
+def kb_sound_followup_owner(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
+    i18n = _i18n(i18n)
+    kb = InlineKeyboardBuilder()
+    kb.button(text=i18n.t(lang, "mission_done"), callback_data="sound:done")
+    kb.button(text=i18n.t(lang, "check_finder_location"), callback_data="sound:check_finder")
+    kb.adjust(1)
+    return kb.as_markup()
+
+
+def kb_sound_followup_finder(lang: str, i18n: Optional[I18n] = None) -> InlineKeyboardMarkup:
+    i18n = _i18n(i18n)
+    kb = InlineKeyboardBuilder()
+    kb.button(text=i18n.t(lang, "mission_done"), callback_data="sound:done")
+    kb.button(text=i18n.t(lang, "check_owner_location"), callback_data="sound:check_owner")
     kb.adjust(1)
     return kb.as_markup()

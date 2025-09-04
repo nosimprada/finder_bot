@@ -6,15 +6,15 @@ from pathlib import Path
 from aiogram import Router, F
 from aiogram.filters import CommandStart
 from aiogram.types import Message, CallbackQuery, FSInputFile
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import StatesGroup, State
 
 from config import (
     OWNER_ID,
     OWNER_LANG,
     START_KEY,
-    PET_NAME,
-    PET_BIRTH_YEAR,
-    PET_PHOTO_PATH,
     Stage,
+    get_owner_lang,
 )
 
 from utils.finder_store import (
@@ -25,90 +25,31 @@ from utils.finder_store import (
     set_stage, get_stage,
     status_of,
 )
+from utils.func import _extract_start_arg, _pick_lang
 from utils.i18n import I18N as _I18N, I18n
-from keyboards.markup import (
-    kb_finder_welcome,
-    kb_owner_contact,   # <-- добавили импорт
-)
+from utils.location_watcher import ensure_watcher_for_pair, set_finder_live
 from utils.message_log_store import clear_chat, delete_all_logged_messages, delete_logged_bot_messages
+from utils.outbox import notify_finder_request_location, notify_owner_about_finder, notify_owner_finder_live_received, send_finder_owner_alerted, send_finder_pet_card, send_live_location_instructions
 
 router = Router(name="finder")
 
 
-def _extract_start_arg(text: str | None) -> str:
-    if not text:
-        return ""
-    parts = text.strip().split(maxsplit=1)
-    return parts[1].strip() if len(parts) == 2 else ""
-
-def _pick_lang(code: str | None) -> str:
-    if not code:
-        return "en"
-    code = code.lower()
-    if code.startswith("ru"):
-        return "ru"
-    return "en"
-
-def _calc_age_years(birth_year: int) -> int:
-    return max(0, int(date.today().year) - int(birth_year))
-
-async def _send_finder_welcome(message: Message, lang: str, i18n: I18n) -> None:
-    age = _calc_age_years(PET_BIRTH_YEAR)
-    caption = i18n.t(lang, "pet_info_message", pet_name=PET_NAME, age=age)
-
-    photo_path = Path(PET_PHOTO_PATH)
-    if photo_path.is_file():
-        await message.answer_photo(
-            photo=FSInputFile(photo_path),
-            caption=caption,
-            reply_markup=kb_finder_welcome(lang, i18n),
-        )
-    else:
-        await message.answer(
-            caption,
-            reply_markup=kb_finder_welcome(lang, i18n),
-        )
-
-
-async def _notify_owner_about_finder(bot, i18n: I18n) -> None:
-    """
-    Сообщение владельцу по ТЗ: без упоминания нашедшего.
-    Текст из локалей + указатель на кнопку ниже.
-    """
-    text = i18n.t(OWNER_LANG, "owner_found_pet") + "\n\n👇"
-
-    photo_path = Path(PET_PHOTO_PATH)
-    if photo_path.is_file():
-        await bot.send_photo(
-            chat_id=OWNER_ID,
-            photo=FSInputFile(photo_path),
-            caption=text,
-            reply_markup=kb_owner_contact(OWNER_LANG, i18n),   # <-- используем клавиатуру из markup
-        )
-    else:
-        await bot.send_message(
-            chat_id=OWNER_ID,
-            text=text,
-            reply_markup=kb_owner_contact(OWNER_LANG, i18n),   # <-- используем клавиатуру из markup
-        )
-
-
 
 @router.message(CommandStart())
-async def start_any(message: Message):
+async def start_any(message: Message, state: FSMContext, lang: str):
+    
+    print(message.from_user.language_code)
     uid = message.from_user.id
     if int(uid) == int(OWNER_ID):
         return
 
     arg = _extract_start_arg(message.text)
-    lang = _pick_lang(getattr(message.from_user, "language_code", None))
     i18n = _I18N
 
     if arg == str(START_KEY):
         ensure_finder(uid, lang=str(lang), stage=int(Stage.START_SCREEN))
         store_set_lang(uid, lang)
-
-        await _send_finder_welcome(message, lang, i18n)
+        await send_finder_pet_card(message, lang, i18n)
         set_stage(uid, Stage.FINDER_WELCOME_SHOWN)
         return
 
@@ -119,11 +60,29 @@ async def start_any(message: Message):
     store_set_lang(uid, lang)
 
     cur_stage = get_stage(uid)
+
     if cur_stage == int(Stage.FINDER_PRESSED_CONTACT_OWNER):
-        await message.answer(i18n.t(lang, "owner_alerted"))
+        await send_finder_owner_alerted(message, lang, i18n)
         return
 
-    await _send_finder_welcome(message, lang, i18n)
+    if cur_stage == int(Stage.OWNER_REQUESTED_FINDER_LOCATION):
+        await notify_finder_request_location(
+            bot=message.bot,
+            finder_id=uid,
+            finder_lang=lang,
+            i18n=i18n
+        )
+        return
+
+    if cur_stage == int(Stage.THE_FINDER_WAS_SHOWN_INSTRUCTIONS_FOR_SENDING_THE_LOCATION):
+        await send_live_location_instructions(message=message, lang=lang)
+        try:
+            await state.set_state(FinderStates.WAITING_LIVE)
+        except Exception:
+            pass
+        return
+
+    await send_finder_pet_card(message, lang, i18n)
     if cur_stage in (None, int(Stage.NONE), int(Stage.START_SCREEN)):
         set_stage(uid, Stage.FINDER_WELCOME_SHOWN)
 
@@ -158,7 +117,7 @@ async def finder_contact_owner(cb: CallbackQuery):
 
     if qpos == 1:
         try:
-            await _notify_owner_about_finder(cb.bot, i18n)
+            await notify_owner_about_finder(cb.bot, i18n)
         except Exception:
             pass
 
@@ -169,5 +128,161 @@ async def finder_contact_owner(cb: CallbackQuery):
 
     try:
         await cb.message.answer(i18n.t(lang, "owner_alerted"))
+    except Exception:
+        pass
+
+
+# --- FSM состояния нашедшего ---
+class FinderStates(StatesGroup):
+    WAITING_LIVE = State()   
+
+
+@router.callback_query(F.data == "finder:share_location")
+async def finder_share_location(cb: CallbackQuery, state: FSMContext):
+    uid = cb.from_user.id
+    if int(uid) == int(OWNER_ID):
+        try:
+            await cb.answer()
+        except Exception:
+            pass
+        return
+
+    try:
+        await cb.message.edit_reply_markup(reply_markup=None)
+    except Exception:
+        pass
+
+    lang = (getattr(cb.from_user, "language_code", None) or "en").split("-")[0].lower()
+    # if lang not in ("ru", "en"):
+    #     lang = "en"
+
+    await send_live_location_instructions(message=cb.message, lang=lang)
+
+    try:
+        await state.set_state(FinderStates.WAITING_LIVE)
+    except Exception:
+        pass
+
+    try:
+        set_stage(uid, Stage.THE_FINDER_WAS_SHOWN_INSTRUCTIONS_FOR_SENDING_THE_LOCATION)
+    except Exception:
+        pass
+
+    try:
+        await cb.answer()
+    except Exception:
+        pass
+
+
+# === ПРИЁМ локации нашедшего ===
+
+@router.message(FinderStates.WAITING_LIVE, F.location)
+async def finder_live_location_received(message: Message, state: FSMContext):
+    #  фильтр
+    if int(message.from_user.id) == int(OWNER_ID):
+        return
+
+    lang = _pick_lang(getattr(message.from_user, "language_code", None))
+    i18n = _I18N
+    live_period = getattr(message.location, "live_period", None)
+
+    if not live_period:
+        try:
+            await send_live_location_instructions(message=message, lang=lang)
+        except Exception:
+            pass
+        return
+
+    # 1) сохр live в FSM
+    try:
+        await state.update_data(
+            finder_live={
+                "chat_id": message.chat.id,
+                "message_id": message.message_id,
+                "latitude": message.location.latitude,
+                "longitude": message.location.longitude,
+                "live_period": int(live_period),
+            }
+        )
+    except Exception:
+        pass
+
+    # 2) обновляем точку нашедшего для watcher
+    try:
+        set_finder_live(
+            finder_id=message.from_user.id,
+            lat=message.location.latitude,
+            lon=message.location.longitude,
+            live_period_sec=int(live_period),
+        )
+    except Exception:
+        pass
+
+    # 3) запуск watcher для пары 
+    try:
+        ensure_watcher_for_pair(
+            bot=message.bot,
+            owner_id=int(OWNER_ID),
+            finder_id=int(message.from_user.id),
+            owner_lang=get_owner_lang(),
+            finder_lang=lang,
+            i18n=i18n,
+        )
+    except Exception:
+        pass
+
+    # 4) увед один раз
+    try:
+        data = await state.get_data()
+        if not data.get("owner_notified_finder_live"):
+            await notify_owner_finder_live_received(message.bot, i18n)
+            await state.update_data(owner_notified_finder_live=True)
+    except Exception:
+        pass
+
+    # 5) подтверждение нашедшему
+    try:
+        await message.answer(i18n.t(lang, "location_shared_response"))
+    except Exception:
+        pass
+
+
+@router.edited_message(FinderStates.WAITING_LIVE, F.location)
+async def finder_live_location_edited(message: Message, state: FSMContext):
+    if int(message.from_user.id) == int(OWNER_ID):
+        return
+
+    try:
+        await state.update_data(
+            finder_live={
+                "chat_id": message.chat.id,
+                "message_id": message.message_id,
+                "latitude": message.location.latitude,
+                "longitude": message.location.longitude,
+                "live_period": int(getattr(message.location, "live_period", 0) or 0),
+            }
+        )
+    except Exception:
+        pass
+
+    try:
+        set_finder_live(
+            finder_id=message.from_user.id,
+            lat=message.location.latitude,
+            lon=message.location.longitude,
+            live_period_sec=int(getattr(message.location, "live_period", 0) or 0),
+        )
+    except Exception:
+        pass
+
+
+@router.message(FinderStates.WAITING_LIVE)
+async def finder_waiting_live_any_other(message: Message, state: FSMContext):
+    if int(message.from_user.id) == int(OWNER_ID):
+        return
+
+    lang = _pick_lang(getattr(message.from_user, "language_code", None))
+    try:
+        await send_live_location_instructions(message=message, lang=lang)
     except Exception:
         pass
