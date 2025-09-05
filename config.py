@@ -4,7 +4,7 @@ from aiogram import Bot
 
 #===============================================================
 BOT_TOKEN = "7680162257:AAFiccfuZXBoUqq0aIaiNFdQqD-D5sOz9x0"        
-OWNER_ID = 165612690  # 818235411 1443074332  7463989072   165612690   
+OWNER_ID = 7463989072   # 818235411 1443074332  7463989072   165612690   
 GROUP_CHAT_ID = -1002997063260   
 GROUP_INVITE_LINK = "https://t.me/+dweFD32KpRgyYWFi"  
 START_KEY = "7463989072"

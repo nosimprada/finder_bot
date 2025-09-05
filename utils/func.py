@@ -33,10 +33,15 @@ def _pick_lang(code: str | None) -> str:
     return base or "ru"
 
 def _select_time_text(lang: str, minutes: int) -> str:
-    code = (lang or "").lower()
+    # особый случай: 1 час
+    if minutes == 60:
+        if (lang or "").startswith("ru"):
+            return "1 часа"
+        if (lang or "").startswith("uk"):
+            return "1 години"
+        return "1 hour"
 
-    # Русский
-    if code.startswith("ru"):
+    if (lang or "").startswith("ru"):
         n = minutes % 100
         if 11 <= n <= 14:
             word = "минут"
@@ -49,6 +54,13 @@ def _select_time_text(lang: str, minutes: int) -> str:
             else:
                 word = "минут"
         return f"{minutes} {word}"
+
+    if (lang or "").startswith("uk"):
+        # простая форма: X хвилин (без сложных правил для краткости)
+        return f"{minutes} хвилин"
+
+    # default: en
+    return f"{minutes} {'minute' if minutes == 1 else 'minutes'}"
 
     # Украинский (учтён алиас 'ua')
     if code.startswith("uk") or code.startswith("ua"):

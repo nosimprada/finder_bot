@@ -58,6 +58,8 @@ def kb_owner_arrival_menu(lang: str, i18n: Optional[I18n] = None) -> InlineKeybo
     kb.button(text=i18n.t(lang, "arrive_10"), callback_data="owner:eta:10")
     kb.button(text=i18n.t(lang, "arrive_20"), callback_data="owner:eta:20")
     kb.button(text=i18n.t(lang, "arrive_30"), callback_data="owner:eta:30")
+    kb.button(text=i18n.t(lang, "arrive_60"), callback_data="owner:eta:1h")
+    kb.button(text=i18n.t(lang, "check_finder_location"), callback_data="sound:check_finder")
     kb.button(text=i18n.t(lang, "start_chat"), callback_data="owner:start_chat")
     kb.adjust(1)  
     return kb.as_markup()
@@ -89,7 +91,6 @@ def kb_sound_followup_owner(lang: str, i18n: Optional[I18n] = None) -> InlineKey
     i18n = _i18n(i18n)
     kb = InlineKeyboardBuilder()
     kb.button(text=i18n.t(lang, "mission_done"), callback_data="sound:done")
-    kb.button(text=i18n.t(lang, "check_finder_location"), callback_data="sound:check_finder")
     kb.adjust(1)
     return kb.as_markup()
 
@@ -98,6 +99,5 @@ def kb_sound_followup_finder(lang: str, i18n: Optional[I18n] = None) -> InlineKe
     i18n = _i18n(i18n)
     kb = InlineKeyboardBuilder()
     kb.button(text=i18n.t(lang, "mission_done"), callback_data="sound:done")
-    kb.button(text=i18n.t(lang, "check_owner_location"), callback_data="sound:check_owner")
     kb.adjust(1)
     return kb.as_markup()

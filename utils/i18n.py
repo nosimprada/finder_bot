@@ -26,7 +26,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Пожалуйста, сообщите мне, где вы находитесь с помощью отправки вашей локации.",
         "location_shared_response": "Локация отправлена, ожидайте ответа. Не отходите далеко до встречи с собеседником. Когда вы окажитесь рядом, получите оповещение.",
         "finder_live_received": "Бот получил локацию от Вашего собеседника. Пожалуйста, отправьте так же свою трансляцию локации, для того, чтоб получать звуковые уведомления о приближении к месту встречи.",
-        "alert_eror_location": "Похоже, трансляция локации остановилась. Пожалуйста, отправьте live-локацию ещё раз.",
+        "alert_error_location": "Похоже, трансляция локации остановилась. Пожалуйста, отправьте live-локацию ещё раз.",
         "navigation_hint_owner": (
             "Перейдите в режим навигации, вы сможете оценить время в пути, "
             "после чего сообщите время прибытия нашедшему питомца."
@@ -35,10 +35,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Прибуду в течение 10 минут",
         "arrive_20": "Прибуду в течение 20 минут",
         "arrive_30": "Прибуду в течение 30 минут",
+        "arrive_60": "Прибуду в течение одного часа",
         "start_chat": "Начать чат",
         "arrival_owner_10": "Прибуду в течение 10 минут, пожалуйста, дождитесь меня в точке вашей локации.",
         "arrival_owner_20": "Прибуду в течение 20 минут, пожалуйста, дождитесь меня в точке вашей локации.",
         "arrival_owner_30": "Прибуду в течение 30 минут, пожалуйста, дождитесь меня в точке вашей локации.",
+        "arrival_owner_60": "Прибуду в течение одного часа, пожалуйста, дождитесь меня в точке вашей локации.",
         "arrival_timer_warning": (
             "Вы должны прибыть к указанной точке в течение {select_time}. "
             "Если опаздываете или планы изменились, сообщите актуальное время прибытия через это меню."
@@ -87,7 +89,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Please let me know where you are by sharing your location.",
         "location_shared_response": "Location shared. Please wait for response. Stay nearby until meeting. You'll get a notification when close.",
         "finder_live_received": "Bot received location from your contact. Please also share your live location to get audio notifications when approaching meeting point.",
-        "alert_eror_location": "Live location seems to have stopped. Please share live location again.",
+        "alert_error_location": "Live location seems to have stopped. Please share live location again.",
         "navigation_hint_owner": (
             "Switch to navigation mode to estimate travel time, "
             "then inform the finder of your arrival time."
@@ -96,10 +98,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Arrive in 10 minutes",
         "arrive_20": "Arrive in 20 minutes",
         "arrive_30": "Arrive in 30 minutes",
+        "arrive_60": "Arrive in one hour",
         "start_chat": "Start Chat",
         "arrival_owner_10": "I'll arrive within 10 minutes, please wait at your location.",
         "arrival_owner_20": "I'll arrive within 20 minutes, please wait at your location.",
         "arrival_owner_30": "I'll arrive within 30 minutes, please wait at your location.",
+        "arrival_owner_60": "I'll arrive within one hour, please wait at your location.",
         "arrival_timer_warning": (
             "You should arrive at the specified point within {select_time}. "
             "If delayed or plans changed, update your arrival time through this menu."
@@ -148,7 +152,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Por favor, hágame saber dónde se encuentra compartiendo su ubicación.",
         "location_shared_response": "Ubicación compartida. Por favor, espere respuesta. Permanezca cerca hasta la reunión. Recibirás una notificación cuando estés cerca.",
         "finder_live_received": "El bot recibió la ubicación de tu contacto. Por favor, comparte también tu ubicación en vivo para recibir notificaciones de audio al acercarte al punto de encuentro.",
-        "alert_eror_location": "Parece que la ubicación en vivo se ha detenido. Por favor, comparte tu ubicación en vivo nuevamente.",
+        "alert_error_location": "Parece que la ubicación en vivo se ha detenido. Por favor, comparte tu ubicación en vivo nuevamente.",
         "navigation_hint_owner": (
             "Cambia al modo de navegación para estimar el tiempo de viaje, "
             "luego informa al finder de tu hora de llegada."
@@ -157,10 +161,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Llegaré en 10 minutos",
         "arrive_20": "Llegaré en 20 minutos",
         "arrive_30": "Llegaré en 30 minutos",
+        "arrive_60": "Llegaré en una hora",
         "start_chat": "Iniciar chat",
         "arrival_owner_10": "Llegaré dentro de 10 minutos, por favor espera en tu ubicación.",
         "arrival_owner_20": "Llegaré dentro de 20 minutos, por favor espera en tu ubicación.",
         "arrival_owner_30": "Llegaré dentro de 30 minutos, por favor espera en tu ubicación.",
+        "arrival_owner_60": "Llegaré dentro de una hora, por favor espera en tu ubicación.",
         "arrival_timer_warning": (
             "Debes llegar al punto especificado dentro de {select_time}. "
             "Si hay retrasos o cambios de planes, actualiza tu hora de llegada a través de este menú."
@@ -209,7 +215,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Veuillez me faire savoir où vous êtes en partageant votre localisation.",
         "location_shared_response": "Localisation partagée. Veuillez patienter pour une réponse. Restez à proximité jusqu'à la rencontre. Vous recevrez une notification lorsque vous serez proche.",
         "finder_live_received": "Le bot a reçu la localisation de votre contact. Veuillez également partager votre localisation en direct pour recevoir des notifications audio lorsque vous approchez du point de rencontre.",
-        "alert_eror_location": "La localisation en direct semble s'être arrêtée. Veuillez partager à nouveau votre localisation en direct.",
+        "alert_error_location": "La localisation en direct semble s'être arrêtée. Veuillez partager à nouveau votre localisation en direct.",
         "navigation_hint_owner": (
             "Passez en mode navigation pour estimer le temps de trajet, "
             "puis informez le trouveur de votre heure d'arrivée."
@@ -218,10 +224,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "J'arrive dans 10 minutes",
         "arrive_20": "J'arrive dans 20 minutes",
         "arrive_30": "J'arrive dans 30 minutes",
+        "arrive_60": "J'arrive dans une heure",
         "start_chat": "Commencer le chat",
         "arrival_owner_10": "J'arriverai dans 10 minutes, veuillez m'attendre à votre emplacement.",
         "arrival_owner_20": "J'arriverai dans 20 minutes, veuillez m'attendre à votre emplacement.",
         "arrival_owner_30": "J'arriverai dans 30 minutes, veuillez m'attendre à votre emplacement.",
+        "arrival_owner_60": "J'arriverai dans une heure, veuillez m'attendre à votre emplacement.",
         "arrival_timer_warning": (
             "Vous devez arriver au point spécifié dans {select_time}. "
             "Si vous êtes retardé ou si les plans changent, mettez à jour votre heure d'arrivée via ce menu."
@@ -270,7 +278,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Bitte teilen Sie mir mit, wo Sie sind, indem Sie Ihren Standort teilen.",
         "location_shared_response": "Standort geteilt. Bitte warten Sie auf eine Antwort. Bleiben Sie in der Nähe, bis zum Treffen. Sie erhalten eine Benachrichtigung, wenn Sie in der Nähe sind.",
         "finder_live_received": "Bot hat Standort von Ihrem Kontakt erhalten. Bitte teilen Sie auch Ihren Live-Standort, um Audio-Benachrichtigungen zu erhalten, wenn Sie sich dem Treffpunkt nähern.",
-        "alert_eror_location": "Live-Standort scheint angehalten worden zu sein. Bitte teilen Sie erneut Ihren Live-Standort.",
+        "alert_error_location": "Live-Standort scheint angehalten worden zu sein. Bitte teilen Sie erneut Ihren Live-Standort.",
         "navigation_hint_owner": (
             "Wechseln Sie in den Navigationsmodus, um die Reisezeit zu schätzen, "
             "und informieren Sie dann den Finder über Ihre Ankunftszeit."
@@ -279,10 +287,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Komme in 10 Minuten an",
         "arrive_20": "Komme in 20 Minuten an",
         "arrive_30": "Komme in 30 Minuten an",
+        "arrive_60": "Komme in einer Stunde an",
         "start_chat": "Chat starten",
         "arrival_owner_10": "Ich komme innerhalb von 10 Minuten an, bitte warten Sie an Ihrem Standort auf mich.",
         "arrival_owner_20": "Ich komme innerhalb von 20 Minuten an, bitte warten Sie an Ihrem Standort auf mich.",
         "arrival_owner_30": "Ich komme innerhalb von 30 Minuten an, bitte warten Sie an Ihrem Standort auf mich.",
+        "arrival_owner_60": "Ich komme innerhalb einer Stunde an, bitte warten Sie an Ihrem Standort auf mich.",
         "arrival_timer_warning": (
             "Sie sollten innerhalb von {select_time} am angegebenen Punkt ankommen. "
             "Wenn Sie Verspätung haben oder sich Pläne ändern, aktualisieren Sie Ihre Ankunftszeit über dieses Menü."
@@ -331,7 +341,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Per favore, fammi sapere dove sei condividendo la tua posizione.",
         "location_shared_response": "Posizione condivisa. Attendere una risposta. Rimanere nelle vicinanze fino all'incontro. Riceverai una notifica quando sei vicino.",
         "finder_live_received": "Il bot ha ricevuto la posizione dal tuo contatto. Per favore, condividi anche la tua posizione in tempo reale per ricevere notifiche audio quando ti avvicini al punto d'incontro.",
-        "alert_eror_location": "La posizione in tempo reale sembra essersi fermata. Per favore, condividi di nuovo la tua posizione in tempo reale.",
+        "alert_error_location": "La posizione in tempo reale sembra essersi fermata. Per favore, condividi di nuovo la tua posizione in tempo reale.",
         "navigation_hint_owner": (
             "Passa alla modalità navigazione per stimare il tempo di percorrenza, "
             "poi informa il finder del tuo orario di arrivo."
@@ -340,10 +350,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Arrivo tra 10 minuti",
         "arrive_20": "Arrivo tra 20 minuti",
         "arrive_30": "Arrivo tra 30 minuti",
+        "arrive_60": "Arrivo tra un'ora",
         "start_chat": "Inizia chat",
         "arrival_owner_10": "Arriverò entro 10 minuti, per favore aspettami nella tua posizione.",
         "arrival_owner_20": "Arriverò entro 20 minuti, per favore aspettami nella tua posizione.",
         "arrival_owner_30": "Arriverò entro 30 minuti, per favore aspettami nella tua posizione.",
+        "arrival_owner_60": "Arriverò entro un'ora, per favore aspettami nella tua posizione.",
         "arrival_timer_warning": (
             "Dovresti arrivare al punto specificato entro {select_time}. "
             "Se sei in ritardo o i piani cambiano, aggiorna il tuo orario di arrivo tramite questo menu."
@@ -392,7 +404,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Por favor, me informe onde você está compartilhando sua localização.",
         "location_shared_response": "Localização compartilhada. Aguarde uma resposta. Fique por perto até a reunião. Você receberá uma notificação quando estiver perto.",
         "finder_live_received": "O bot recebeu a localização do seu contato. Por favor, compartilhe também sua localização ao vivo para receber notificações de áudio ao se aproximar do ponto de encontro.",
-        "alert_eror_location": "A localização ao vivo parece ter parado. Por favor, compartilhe novamente sua localização ao vivo.",
+        "alert_error_location": "A localização ao vivo parece ter parado. Por favor, compartilhe novamente sua localização ao vivo.",
         "navigation_hint_owner": (
             "Mude para o modo de navegação para estimar o tempo de viagem, "
             "depois informe o finder do seu horário de chegada."
@@ -401,10 +413,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Chego em 10 minutos",
         "arrive_20": "Chego em 20 minutos",
         "arrive_30": "Chego em 30 minutos",
+        "arrive_60": "Chego em uma hora",
         "start_chat": "Iniciar conversa",
         "arrival_owner_10": "Chegarei em 10 minutos, por favor espere por mim em sua localização.",
         "arrival_owner_20": "Chegarei em 20 minutos, por favor espere por mim em sua localização.",
         "arrival_owner_30": "Chegarei em 30 minutos, por favor espere por mim em sua localização.",
+        "arrival_owner_60": "Chegarei em uma hora, por favor espere por mim em sua localização.",
         "arrival_timer_warning": (
             "Você deve chegar ao ponto especificado dentro de {select_time}. "
             "Se atrasado ou os planos mudarem, atualize seu horário de chegada através deste menu."
@@ -453,7 +467,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Laat me alsjeblieft weten waar je bent door je locatie te delen.",
         "location_shared_response": "Locatie gedeeld. Wacht op reactie. Blijf in de buurt tot de ontmoeting. U krijgt een melding wanneer u dichtbij bent.",
         "finder_live_received": "Bot heeft locatie van uw contact ontvangen. Deel ook uw live locatie om audio meldingen te krijgen wanneer u het ontmoetingspunt nadert.",
-        "alert_eror_location": "Live locatie lijkt te zijn gestopt. Deel alstublieft opnieuw uw live locatie.",
+        "alert_error_location": "Live locatie lijkt te zijn gestopt. Deel alstublieft opnieuw uw live locatie.",
         "navigation_hint_owner": (
             "Schakel over naar navigatiemodus om de reistijd in te schatten, "
             "informeer vervolgens de vinder over uw aankomsttijd."
@@ -462,10 +476,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Kom over 10 minuten aan",
         "arrive_20": "Kom over 20 minuten aan",
         "arrive_30": "Kom over 30 minuten aan",
+        "arrive_60": "Kom over een uur aan",
         "start_chat": "Chat starten",
         "arrival_owner_10": "Ik kom binnen 10 minuten aan, wacht alsjeblieft op me op uw locatie.",
         "arrival_owner_20": "Ik kom binnen 20 minuten aan, wacht alsjeblieft op me op uw locatie.",
         "arrival_owner_30": "Ik kom binnen 30 minuten aan, wacht alsjeblieft op me op uw locatie.",
+        "arrival_owner_60": "Ik kom binnen een uur aan, wacht alsjeblieft op me op uw locatie.",
         "arrival_timer_warning": (
             "U moet binnen {select_time} op het opgegeven punt arriveren. "
             "Als u vertraging heeft of plannen veranderen, werk dan uw aankomsttijd bij via dit menu."
@@ -514,7 +530,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Proszę, poinformuj mnie, gdzie jesteś, udostępniając swoją lokalizację.",
         "location_shared_response": "Lokalizacja udostępniona. Proszę czekać na odpowiedź. Pozostań w pobliżu do spotkania. Otrzymasz powiadomienie, gdy będziesz blisko.",
         "finder_live_received": "Bot otrzymał lokalizację od twojego kontaktu. Proszę, również udostępnij swoją lokalizację na żywo, aby otrzymywać powiadomienia dźwiękowe przy zbliżaniu się do miejsca spotkania.",
-        "alert_eror_location": "Wygląda na to, że transmisja lokalizacji na żywo zatrzymała się. Proszę udostępnić ponownie lokalizację na żywo.",
+        "alert_error_location": "Wygląda na to, że transmisja lokalizacji na żywo zatrzymała się. Proszę udostępnić ponownie lokalizację na żywo.",
         "navigation_hint_owner": (
             "Przejdź do trybu nawigacji, aby oszacować czas podróży, "
             "następnie poinformuj znalazcę o swoim czasie przybycia."
@@ -523,13 +539,15 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Przyjadę za 10 minut",
         "arrive_20": "Przyjadę za 20 minut",
         "arrive_30": "Przyjadę za 30 minut",
+        "arrive_60": "Przyjadę za godzinę",
         "start_chat": "Rozpocznij czat",
         "arrival_owner_10": "Przyjadę w ciągu 10 minut, proszę czekać na mnie w swojej lokalizacji.",
         "arrival_owner_20": "Przyjadę w ciągu 20 minut, proszę czekać na mnie w swojej lokalizacji.",
         "arrival_owner_30": "Przyjadę w ciągu 30 minut, proszę czekać na mnie w swojej lokalizacji.",
+        "arrival_owner_60": "Przyjadę w ciągu godziny, proszę czekać na mnie w swojej lokalizacji.",
         "arrival_timer_warning": (
-            "Powinieneś przybyć do указанного пункта в течение {select_time}. "
-            "Jeśli się spóźniasz lub plany się zmieniają, zaktualizuj czas przybycia через это меню."
+            "Powinieneś przybyć do wskazanego punktu w ciągu {select_time}. "
+            "Jeśli się spóźniasz lub plany się zmieniają, zaktualizuj czas przybycia przez to menu."
         ),
         "back": "Powrót",
         "language_warning": "Uwaga! Twój rozmówca może mówić w innym języku",
@@ -545,16 +563,15 @@ locales: Dict[str, Dict[str, str]] = {
         "sound_password": "Hasło dźwiękowe",
         "playing_sound_password": "Odtwarzanie hasła dźwiękowego (30 sekund)…",
         "after_sound_prompt": "*==============================*",
-
         "mission_done": "Misja wykonana!",
         "check_owner_location": "Sprawdź lokalizację właściciela",
         "check_finder_location": "Sprawdź lokalizację znalazcy",
         "owner_location_unavailable": "Przepraszam, obecna lokalizacja właściciela jest tymczasowo niedostępna.",
-        "finder_location_unavailable": "Przepraszam, obecna lokalizacja znalazcy jest tymczasowo niedostępна.",
+        "finder_location_unavailable": "Przepraszam, obecna lokalizacja znalazcy jest tymczasowo niedostępna.",
     },
     "tr": {
         "pet_info_message": (
-            "Bu evcil hayvanın sayfası: {pet_name}. Yaş: {age} years.\n\n"
+            "Bu evcil hayvanın sayfası: {pet_name}. Yaş: {age} yaş.\n\n"
             "Bunu okuyorsanız, kayboldum. Gerçekten eve, sahibime dönmek istiyorum. "
             "Beni çok seviyor ve özlüyor.\n"
             "Lütfen aşağıdaki düğmeyi kullanarak onunla iletişime geçin ve eve dönmeme yardım edin."
@@ -576,7 +593,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Lütfen konumunuzu paylaşarak nerede olduğunuzu bana bildirin.",
         "location_shared_response": "Konum paylaşıldı. Lütfen yanıt bekleyin. Buluşana kadar yakınlarda kalın. Yakın olduğunuzda bir bildirim alacaksınız.",
         "finder_live_received": "Bot kişinizden konum aldı. Lütfen buluşma noktasına yaklaştığınızda sesli bildirimler almak için canlı konumunuzu da paylaşın.",
-        "alert_eror_location": "Canlı konum durmuş görünüyor. Lütfen canlı konumunuzu tekrar paylaşın.",
+        "alert_error_location": "Canlı konum durmuş görünüyor. Lütfen canlı konumunuzu tekrar paylaşın.",
         "navigation_hint_owner": (
             "Yol süresini tahmin etmek için navigasyon moduna geçin, "
             "ardından bulucuya varış saatinizi bildirin."
@@ -585,10 +602,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "10 dakika içinde varırım",
         "arrive_20": "20 dakika içinde varırım",
         "arrive_30": "30 dakika içinde varırım",
+        "arrive_60": "Bir saat içinde varırım",
         "start_chat": "Sohbet Başlat",
         "arrival_owner_10": "10 dakika içinde varacağım, lütfen beni konumunuzda bekleyin.",
         "arrival_owner_20": "20 dakika içinde varacağım, lütfen beni konumunuzda bekleyin.",
         "arrival_owner_30": "30 dakika içinde varacağım, lütfen beni konumunuzda bekleyin.",
+        "arrival_owner_60": "Bir saat içinde varacağım, lütfen beni konumunuzda bekleyin.",
         "arrival_timer_warning": (
             "Belirtilen noktaya {select_time} içinde varmalısınız. "
             "Geciktiyseniz veya planlar değiştiyse, varış saatinizi bu menü aracılığıyla güncelleyin."
@@ -637,7 +656,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Будь ласка, повідомте мені, де ви знаходитесь за допомогою відправки вашої локації.",
         "location_shared_response": "Локацію відправлено, очікуйте відповіді. Не відходьте далеко до зустрічі з співрозмовником. Коли ви опинитесь поруч, отримаєте сповіщення.",
         "finder_live_received": "Бот отримав локацію від Вашого співрозмовника. Будь ласка, відправте так само свою трансляцію локації, для того, щоб отримувати звукові сповіщення про наближення до місця зустрічі.",
-        "alert_eror_location": "Схоже, трансляція локації зупинилася. Будь ласка, відправте live-локацію ще раз.",
+        "alert_error_location": "Схоже, трансляція локації зупинилася. Будь ласка, відправте live-локацію ще раз.",
         "navigation_hint_owner": (
             "Перейдіть в режим навігації, ви зможете оцінити час в дорозі, "
             "після чого повідомте час прибуття тому, хто знайшов вихованця."
@@ -646,10 +665,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Прибуду протягом 10 хвилин",
         "arrive_20": "Прибуду протягом 20 хвилин",
         "arrive_30": "Прибуду протягом 30 хвилин",
+        "arrive_60": "Прибуду протягом однієї години",
         "start_chat": "Почати чат",
         "arrival_owner_10": "Прибуду протягом 10 хвилин, будь ласка, зачекайте на мене в точці вашої локації.",
         "arrival_owner_20": "Прибуду протягом 20 хвилин, будь ласка, зачекайте на мене в точці вашої локації.",
         "arrival_owner_30": "Прибуду протягом 30 хвилин, будь ласка, зачекайте на мене в точці вашої локації.",
+        "arrival_owner_60": "Прибуду протягом однієї години, будь ласка, зачекайте на мене в точці вашої локації.",
         "arrival_timer_warning": (
             "Ви повинні прибути до вказаної точки протягом {select_time}. "
             "Якщо запізнюєтеся або плани змінилися, повідомте актуальний час прибуття через це меню."
@@ -698,7 +719,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Silakan beri tahu saya di mana Anda berada dengan membagikan lokasi Anda.",
         "location_shared_response": "Lokasi dibagikan. Silakan tunggu respons. Tetap di dekat sampai pertemuan. Anda akan mendapat notifikasi ketika dekat.",
         "finder_live_received": "Bot menerima lokasi dari kontak Anda. Silakan juga bagikan lokasi langsung Anda untuk mendapatkan notifikasi audio saat mendekati titik pertemuan.",
-        "alert_eror_location": "Tampaknya lokasi langsung telah berhenti. Harap bagikan lokasi langsung lagi.",
+        "alert_error_location": "Tampaknya lokasi langsung telah berhenti. Harap bagikan lokasi langsung lagi.",
         "navigation_hint_owner": (
             "Beralih ke mode navigasi untuk memperkirakan waktu perjalanan, "
             "lalu beri tahu finder tentang waktu kedatangan Anda."
@@ -707,10 +728,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Tiba dalam 10 menit",
         "arrive_20": "Tiba dalam 20 menit",
         "arrive_30": "Tiba dalam 30 menit",
+        "arrive_60": "Tiba dalam satu jam",
         "start_chat": "Mulai Obrolan",
         "arrival_owner_10": "Saya akan tiba dalam 10 menit, silakan tunggu saya di lokasi Anda.",
         "arrival_owner_20": "Saya akan tiba dalam 20 menit, silakan tunggu saya di lokasi Anda.",
         "arrival_owner_30": "Saya akan tiba dalam 30 menit, silakan tunggu saya di lokasi Anda.",
+        "arrival_owner_60": "Saya akan tiba dalam satu jam, silakan tunggu saya di lokasi Anda.",
         "arrival_timer_warning": (
             "Anda harus tiba di titik yang ditentukan dalam {select_time}. "
             "Jika terlambat atau rencana berubah, perbarui waktu kedatangan Anda melalui menu ini."
@@ -759,7 +782,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Si us plau, fes-me saber on ets compartint la teva ubicació.",
         "location_shared_response": "Ubicació compartida. Si us plau, espera una resposta. Roman a prop fins a la trobada. Rebràs una notificació quan estiguis a prop.",
         "finder_live_received": "El bot ha rebut la ubicació del teu contacte. Si us plau, comparteix també la teva ubicació en viu per rebre notificacions d'àudio quan t'apropis al punt de trobada.",
-        "alert_eror_location": "Sembla que la ubicació en viu s'ha aturat. Si us plau, comparteixi la ubicació en viu de nou.",
+        "alert_error_location": "Sembla que la ubicació en viu s'ha aturat. Si us plau, comparteixi la ubicació en viu de nou.",
         "navigation_hint_owner": (
             "Canvia al mode de navegació per estimar el temps de viatge, "
             "després informa al finder de la teva hora d'arribada."
@@ -768,10 +791,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Arribo en 10 minuts",
         "arrive_20": "Arribo en 20 minuts",
         "arrive_30": "Arribo en 30 minuts",
+        "arrive_60": "Arribo en una hora",
         "start_chat": "Iniciar xat",
         "arrival_owner_10": "Arribaré dins de 10 minuts, si us plau espera'm a la teva ubicació.",
         "arrival_owner_20": "Arribaré dins de 20 minuts, si us plau espera'm a la teva ubicació.",
         "arrival_owner_30": "Arribaré dins de 30 minuts, si us plau espera'm a la teva ubicació.",
+        "arrival_owner_60": "Arribaré dins d'una hora, si us plau espera'm a la teva ubicació.",
         "arrival_timer_warning": (
             "Has d'arribar al punt especificat dins de {select_time}. "
             "Si et retrases o els plans canvien, actualitza la teva hora d'arribada a través d'aquest menú."
@@ -820,7 +845,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Vă rugăm să-mi spuneți unde sunteți partajându-și locația.",
         "location_shared_response": "Locație partajată. Vă rugăm să așteptați un răspuns. Rămâneți în apropiere până la întâlnire. Veți primi o notificare când sunteți aproape.",
         "finder_live_received": "Botul a primit locația de la contactul dvs. Vă rugăm să partajați și locația dvs. live pentru a primi notificări audio atunci când vă apropiați de punctul de întâlnire.",
-        "alert_eror_location": "Se pare că locația live s-a oprit. Vă rugăm să partajați din nou locația live.",
+        "alert_error_location": "Se pare că locația live s-a oprit. Vă rugăm să partajați din nou locația live.",
         "navigation_hint_owner": (
             "Comutați în modul de navigare pentru a estima timpul de călătorie, "
             "apoi informați finder-ul despre ora de sosire."
@@ -829,10 +854,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "Ajung în 10 minute",
         "arrive_20": "Ajung în 20 minute",
         "arrive_30": "Ajung în 30 minute",
+        "arrive_60": "Ajung într-o oră",
         "start_chat": "Începe chat",
         "arrival_owner_10": "Voi ajunge în 10 minute, te rog așteaptă-mă la locația ta.",
         "arrival_owner_20": "Voi ajunge în 20 minute, te rog așteaptă-mă la locația ta.",
         "arrival_owner_30": "Voi ajunge în 30 minute, te rog așteaptă-mă la locația ta.",
+        "arrival_owner_60": "Voi ajunge într-o oră, te rog așteaptă-mă la locația ta.",
         "arrival_timer_warning": (
             "Ar trebui să ajungi la punctul specificat în {select_time}. "
             "Dacă întârzii sau planurile se schimbă, actualizează-ți ora de sosire prin acest meniu."
@@ -881,7 +908,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Kérjük, jelezze, hol van a helymegosztással.",
         "location_shared_response": "Hely megosztva. Kérjük, várjon választ. Maradjon a közelben a találkozóig. Értesítést kap, amikor közel van.",
         "finder_live_received": "A bot megkapta a helyet a kapcsolatától. Kérjük, ossza meg élő helyzetét is, hogy hangértesítéseket kapjon a találkozási ponthoz közeledve.",
-        "alert_eror_location": "Az élő helymeghatározás leállt. Kérjük, ossza meg újra az élő helyzetét.",
+        "alert_error_location": "Az élő helymeghatározás leállt. Kérjük, ossza meg újra az élő helyzetét.",
         "navigation_hint_owner": (
             "Váltson navigációs módra az utazási idő becsléséhez, "
             "majd értesítse a findert az érkezési idejéről."
@@ -890,10 +917,12 @@ locales: Dict[str, Dict[str, str]] = {
         "arrive_10": "10 perc múlva érkezem",
         "arrive_20": "20 perc múlva érkezem",
         "arrive_30": "30 perc múlva érkezem",
+        "arrive_60": "Egy óra múlva érkezem",
         "start_chat": "Csevegés indítása",
         "arrival_owner_10": "10 percen belül érkezem, kérlek várj rám a helyzetednél.",
         "arrival_owner_20": "20 percen belül érkezem, kérlek várj rám a helyzetednél.",
         "arrival_owner_30": "30 percen belül érkezem, kérlek várj rám a helyzetednél.",
+        "arrival_owner_60": "Egy órán belül érkezem, kérlek várj rám a helyzetednél.",
         "arrival_timer_warning": (
             "A megadott pontra {select_time} belül kell megérkeznie. "
             "Ha késik vagy a tervek változnak, frissítse érkezési idejét ezen a menüön keresztül."
@@ -919,7 +948,12 @@ locales: Dict[str, Dict[str, str]] = {
         "finder_location_unavailable": "Sajnos a meglelő jelenlegi helye ideiglenesen nem elérhető.",
     },
     "cs": {
-        "pet_info_message": "Toto je stránka mazlíčka: {pet_name}. Věk: {age} let.\n\nPokud toto čtete, ztratil jsem se. Opravdu se chci vrátit domů ke svému majiteli. Moc mě miluje a chybím mu.\nProsím, kontaktujte jej pomocí tlačítka níže a pomozte mi vrátit se domů.",
+        "pet_info_message": (
+            "Toto je stránka mazlíčka: {pet_name}. Věk: {age} let.\n\n"
+            "Pokud toto čtete, ztratil jsem se. Opravdu se chci vrátit domů ke svému majiteli. "
+            "Moc mě miluje a chybím mu.\n"
+            "Prosím, kontaktujte jej pomocí tlačítka níže a pomozte mi vrátit se domů."
+        ),
         "contact_owner": "Kontaktovat majitele",
         "owner_alerted": "Majitel byl upozorněn a brzy odpoví.",
         "contact_action": "Kontakt",
@@ -929,26 +963,41 @@ locales: Dict[str, Dict[str, str]] = {
         "location_requested": "Dobrý den! Prosím, sdílejte svou polohu, abychom se mohli setkat.",
         "location_requested_from_owner": "Poloha byla požadována. Čeká se na odpověď.",
         "share_location": "Sdílet polohu",
-        "live_location_howto": "Prosím, sdílejte svou živou polohu s botem.\n\n📎 → «Poloha» → «Sdílet živou polohu» → vyberte dobu trvání → odešlete.",
+        "live_location_howto": (
+            "Prosím, sdílejte svou živou polohu s botem.\n\n"
+            "📎 → «Poloha» → «Sdílet živou polohu» → "
+            "vyberte dobu trvání → odešlete."
+        ),
         "request_location": "Prosím, dejte mi vědět, kde jste, sdílením své polohy.",
         "location_shared_response": "Poloha sdílena. Počkejte prosím na odpověď. Zůstaňte poblíž do setkání. Až budete blízko, dostanete upozornění.",
         "finder_live_received": "Bot obdržel polohu od vašeho kontaktu. Prosím, sdílejte také svou živou polohu, abyste dostávali zvuková upozornění při přiblížení k místu setkání.",
-        "alert_eror_location": "Zdá se, že živé vysílání polohy bylo přerušeno. Prosím, sdílejte živou polohu znovu.",
-        "navigation_hint_owner": "Přepněte do režimu navigace k odhadu doby cestování, pak informujte nálezce o svém času příjezdu.",
+        "alert_error_location": "Zdá se, že živé vysílání polohy bylo přerušeno. Prosím, sdílejte živou polohu znovu.",
+        "navigation_hint_owner": (
+            "Přepněte do režimu navigace k odhadu doby cestování, "
+            "pak informujte nálezce o svém času příjezdu."
+        ),
         "navigation_hint_user": "Informujte, když přijedete, nebo pozvěte do chatu, pokud jsou potřebná jiná uspořádání",
         "arrive_10": "Přijedu za 10 minut",
         "arrive_20": "Přijedu za 20 minut",
         "arrive_30": "Přijedu za 30 minut",
+        "arrive_60": "Přijedu za hodinu",
         "start_chat": "Začít chat",
         "arrival_owner_10": "Přijedu do 10 minut, prosím, počkejte na mě na svém místě.",
         "arrival_owner_20": "Přijedu do 20 minut, prosím, počkejte na mě na svém místě.",
         "arrival_owner_30": "Přijedu do 30 minut, prosím, počkejte na mě na svém místě.",
-        "arrival_timer_warning": "Měli byste dorazit do určeného bodu do {select_time}. Pokud máte zpoždění nebo se plány změnily, aktualizujte svůj čas příjezdu prostřednictvím této nabídky.",
+        "arrival_owner_60": "Přijedu do hodiny, prosím, počkejte na mě na svém místě.",
+        "arrival_timer_warning": (
+            "Měli byste dorazit do určeného bodu do {select_time}. "
+            "Pokud máte zpoždění nebo se plány změnily, aktualizujte svůj čas příjezdu prostřednictvím této nabídky."
+        ),
         "back": "Zpět",
         "language_warning": "Upozornění! Váš konverzační partner může mluvit jiným jazykem",
         "accept_chat": "Přijmout",
         "invite_text": "Sledujte {invite_link} pro pokračování v komunikaci ve skupině {group_name}.",
-        "owner_chat_offer": "Vlastník mazlíčka vás zve do chatu k prodiskutování alternativních možností setkání.\nTlačítko níže vás přenese do chatu s vlastníkem mazlíčka.",
+        "owner_chat_offer": (
+            "Vlastník mazlíčka vás zve do chatu k prodiskutování alternativních možností setkání.\n"
+            "Tlačítko níže vás přenese do chatu s vlastníkem mazlíčka."
+        ),
         "open_chat": "Otevřít chat",
         "chat_partner_joined_owner": "Konverzační partner úspěšně vstoupil do chatu. Připojte se také k chatu k prodiskutování detailů.",
         "proximity_notification": "Jste poblíž! Zapněte zvukové heslo, rozhlédněte se kolem a setkáte se!",
@@ -962,7 +1011,12 @@ locales: Dict[str, Dict[str, str]] = {
         "finder_location_unavailable": "Omlouváme se, aktuální poloha nálezce je dočasně nedostupná.",
     },
     "sk": {
-        "pet_info_message": "Toto je stránka vášho maznáčika: {pet_name}. Vek: {age} rokov.\n\nAk toto čítate, stratil som sa. Naozaj sa chcem vrátiť domov k svojmu majiteľovi. Veľmi ma miluje a chýbam mu.\nProsím, kontaktujte ho pomocou tlačidla nižšie a pomôžte mi vrátiť sa domov.",
+        "pet_info_message": (
+            "Toto je stránka vášho maznáčika: {pet_name}. Vek: {age} rokov.\n\n"
+            "Ak toto čítate, stratil som sa. Naozaj sa chcem vrátiť domov k svojmu majiteľovi. "
+            "Veľmi ma miluje a chýbam mu.\n"
+            "Prosím, kontaktujte ho pomocou tlačidla nižšie a pomôžte mi vrátiť sa domov."
+        ),
         "contact_owner": "Kontaktovať majiteľa",
         "owner_alerted": "Majiteľ bol upozornený a čoskoro odpovie.",
         "contact_action": "Kontakt",
@@ -972,26 +1026,41 @@ locales: Dict[str, Dict[str, str]] = {
         "location_requested": "Dobrý deň! Prosím, zdieľajte svoju polohu, aby sme sa mohli stretnúť.",
         "location_requested_from_owner": "Poloha bola požadovaná. Čaká sa na odpoveď.",
         "share_location": "Zdieľať polohu",
-        "live_location_howto": "Prosím, zdieľajte svoju živú polohu s botom.\n\n📎 → «Poloha» → «Zdieľať živú polohu» → vyberte dĺžku trvania → odošlite.",
+        "live_location_howto": (
+            "Prosím, zdieľajte svoju živú polohu s botom.\n\n"
+            "📎 → «Poloha» → «Zdieľať živú polohu» → "
+            "vyberte dĺžku trvania → odošlite."
+        ),
         "request_location": "Prosím, dajte mi vedieť, kde ste, zdieľaním svojej polohy.",
         "location_shared_response": "Poloha zdieľaná. Čakajte prosím na odpoveď. Zostaňte poblíž do stretnutia. Keď budete blízko, dostanete upozornenie.",
         "finder_live_received": "Bot dostal polohu od vášho kontaktu. Prosím, zdieľajte aj svoju živú polohu, aby ste dostávali zvukové upozornenia pri približovaní sa k miestu stretnutia.",
-        "alert_eror_location": "Zdá sa, že živé vysielanie polohy bolo prerušené. Prosím, zdieľajte živú polohu znova.",
-        "navigation_hint_owner": "Prepnite do režimu navigácie na odhad doby cesty, potom informujte nájdeného o svojom čase príchodu.",
+        "alert_error_location": "Zdá sa, že živé vysielanie polohy bolo prerušené. Prosím, zdieľajte živú polohu znova.",
+        "navigation_hint_owner": (
+            "Prepnite do režimu navigácie na odhad doby cesty, "
+            "potom informujte nájdeného o svojom čase príchodu."
+        ),
         "navigation_hint_user": "Informujte, keď prídete, alebo pozvite do chatu, ak sú potrebné iné dohody",
         "arrive_10": "Prídem za 10 minút",
         "arrive_20": "Prídem za 20 minút",
         "arrive_30": "Prídem za 30 minút",
+        "arrive_60": "Prídem za hodinu",
         "start_chat": "Začať chat",
         "arrival_owner_10": "Prídem do 10 minút, prosím, počkajte na ma na svojom mieste.",
         "arrival_owner_20": "Prídem do 20 minút, prosím, počkajte na ma na svojom mieste.",
         "arrival_owner_30": "Prídem do 30 minút, prosím, počkajte na ma na svojom mieste.",
-        "arrival_timer_warning": "Mali by ste doraziť do určeného bodu do {select_time}. Ak meškate alebo sa plány zmenili, aktualizujte svoj čas príchodu prostredníctvom tohto menu.",
+        "arrival_owner_60": "Prídem do hodiny, prosím, počkajte na ma na svojom mieste.",
+        "arrival_timer_warning": (
+            "Mali by ste doraziť do určeného bodu do {select_time}. "
+            "Ak meškate alebo sa plány zmenili, aktualizujte svoj čas príchodu prostredníctvom tohto menu."
+        ),
         "back": "Späť",
         "language_warning": "Upozornenie! Váš konverzačný partner môže hovoriť iným jazykom",
         "accept_chat": "Prijať",
         "invite_text": "Sledujte {invite_link} pre pokračovanie v komunikácii v skupine {group_name}.",
-        "owner_chat_offer": "Vlastník maznáčika vás pozýva do chatu na prediskutovanie alternatívnych možností stretnutia.\nTlačidlo nižšie vás prenesie do chatu s vlastníkom maznáčika.",
+        "owner_chat_offer": (
+            "Vlastník maznáčika vás pozýva do chatu na prediskutovanie alternatívnych možností stretnutia.\n"
+            "Tlačidlo nižšie vás prenesie do chatu s vlastníkom maznáčika."
+        ),
         "open_chat": "Otvoriť chat",
         "chat_partner_joined_owner": "Konverzačný partner úspešne vstúpil do chatu. Pripojte sa tiež do chatu na prediskutovanie detailov.",
         "proximity_notification": "Ste poblíž! Zapnite zvukové heslo, obzrite sa okolo a stretnete sa!",
@@ -1005,7 +1074,12 @@ locales: Dict[str, Dict[str, str]] = {
         "finder_location_unavailable": "Ospravedlňujeme sa, aktuálna poloha nájdeného je dočasne nedostupná.",
     },
     "bg": {
-        "pet_info_message": "Това е страницата на домашния любимец: {pet_name}. Възраст: {age} години.\n\nАко четете това, аз съм се изгубил. Много искам да се върна у дома при стопанина си. Той много ме обича и му липсвам.\nМоля, свържете се с него чрез бутона по-долу и ми помогнете да се върна у дома.",
+        "pet_info_message": (
+            "Това е страницата на домашния любимец: {pet_name}. Възраст: {age} години.\n\n"
+            "Ако четете това, аз съм се изгубил. Много искам да се върна у дома при стопанина си. "
+            "Той много ме обича и му липсвам.\n"
+            "Моля, свържете се с него чрез бутона по-долу и ми помогнете да се върна у дома."
+        ),
         "contact_owner": "Свържете се със стопанина",
         "owner_alerted": "Стопанинът е уведомен и ще отговори скоро.",
         "contact_action": "Контакт",
@@ -1015,26 +1089,41 @@ locales: Dict[str, Dict[str, str]] = {
         "location_requested": "Здравейте! Моля, споделете вашето местоположение, за да можем да се срещнем.",
         "location_requested_from_owner": "Местоположението е поискано. В очакване на отговор.",
         "share_location": "Споделете местоположение",
-        "live_location_howto": "Моля, споделете вашето текущо местоположение с бота.\n\n📎 → «Местоположение» → «Споделяне на текущо местоположение» → изберете продължителност → изпратете.",
+        "live_location_howto": (
+            "Моля, споделете вашето текущо местоположение с бота.\n\n"
+            "📎 → «Местоположение» → «Споделяне на текущо местоположение» → "
+            "изберете продължителност → изпратете."
+        ),
         "request_location": "Моля, уведомете ме къде сте, като споделите вашето местоположение.",
         "location_shared_response": "Местоположението е споделено. Моля, изчакайте отговор. Оставете наблизо до срещата. Ще получите известие, когато сте близо.",
         "finder_live_received": "Ботът получи местоположение от вашия контакт. Моля, също споделете вашето текущо местоположение, за да получавате звукови известия при приближаване към мястото на срещата.",
-        "alert_eror_location": "Изглежда текущото местоположение е спряло. Моля, споделете отново вашето текущо местоположение.",
-        "navigation_hint_owner": "Превключете в режим на навигация, за да оцените времето за пътуване, след което уведомете намерилия за вашето време на пристигане.",
+        "alert_error_location": "Изглежда текущото местоположение е спряло. Моля, споделете отново вашето текущо местоположение.",
+        "navigation_hint_owner": (
+            "Превключете в режим на навигация, за да оцените времето за пътуване, "
+            "след което уведомете намерилия за вашето време на пристигане."
+        ),
         "navigation_hint_user": "Уведомете, когато пристигнете, или поканете в чат, ако са необходими други споразумения",
         "arrive_10": "Пристигам след 10 минути",
         "arrive_20": "Пристигам след 20 минути",
         "arrive_30": "Пристигам след 30 минути",
+        "arrive_60": "Пристигам след час",
         "start_chat": "Започнете чат",
         "arrival_owner_10": "Ще пристигна в рамките на 10 минути, моля, чакайте ме на вашето местоположение.",
         "arrival_owner_20": "Ще пристигна в рамките на 20 минути, моля, чакайте ме на вашето местоположение.",
         "arrival_owner_30": "Ще пристигна в рамките на 30 минути, моля, чакайте ме на вашето местоположение.",
-        "arrival_timer_warning": "Трябва да пристигнете в указаната точка в рамките на {select_time}. Ако закъснявате или плановете са се променили, актуализирайте времето си за пристигане чрез това меню.",
+        "arrival_owner_60": "Ще пристигна в рамките на час, моля, чакайте ме на вашето местоположение.",
+        "arrival_timer_warning": (
+            "Трябва да пристигнете в указаната точка в рамките на {select_time}. "
+            "Ако закъснявате или плановете са се променили, актуализирайте времето си за пристигане чрез това меню."
+        ),
         "back": "Назад",
         "language_warning": "Внимание! Вашият събеседник може да говори на различен език",
         "accept_chat": "Приемам",
         "invite_text": "Следвайте {invite_link}, за да продължите комуникацията в групата {group_name}.",
-        "owner_chat_offer": "Стопанинът на домашния любимец ви кани в чат, за да обсъди алтернативни опции за среща.\nБутонът по-долу ще ви отведе до чат със стопанина на домашния любимец.",
+        "owner_chat_offer": (
+            "Стопанинът на домашния любимец ви кани в чат, за да обсъди алтернативни опции за среща.\n"
+            "Бутонът по-долу ще ви отведе до чат със стопанина на домашния любимец."
+        ),
         "open_chat": "Отворете чат",
         "chat_partner_joined_owner": "Събеседникът се присъедини успешно към чата. Моля, присъединете се и вие към чата, за да обсъдите подробности.",
         "proximity_notification": "Вие сте наблизо! Активирайте звуковата парола, огледайте се и ще се срещнете!",
@@ -1048,36 +1137,56 @@ locales: Dict[str, Dict[str, str]] = {
         "finder_location_unavailable": "Съжаляваме, текущото местоположение на намерилия е временно недостъпно.",
     },
     "et": {
-        "pet_info_message": "See on lemmiklooma lehekülg: {pet_name}. Vanus: {age} aastat.\n\nKui te seda loete, olen ma ära eksinud. Ma tahan väga tagasi oma omaniku juurde. Ta armastab mind väga ja igatseb mind.\nPalun võtke temaga ühendust alloleva nupuga ja aidake mul koju tagasi saada.",
+        "pet_info_message": (
+            "See on lemmiklooma lehekülg: {pet_name}. Vanus: {age} aastat.\n\n"
+            "Kui te seda loete, olen ma ära eksinud. Ma tahan väga tagasi oma omaniku juurde. "
+            "Ta armastab mind väga ja igatseb mind.\n"
+            "Palun võtke temaga ühendust alloleva nupuga ja aidake mul koju tagasi saada."
+        ),
         "contact_owner": "Võtke ühendust omanikuga",
         "owner_alerted": "Omanik on teavitatud ja vastab peagi.",
         "contact_action": "Kontakt",
-        "owner_found_pet": "Tere! Ma leidsin teie lemmiklooma. Palun võtke minuga ühendust ja ma naudtagi selle teile tagasi andmist.",
-        "location_instruction": "Paluge teise inimese asukoha, et kohtumine korraldada.",
+        "owner_found_pet": "Tere! Ma leidsin teie lemmiklooma. Palun võtke minuga ühendust ja ma annan selle teile rõõmuga tagasi.",
+        "location_instruction": "Paluge teise inimese asukohta, et kohtumine korraldada.",
         "request_pet_location": "Hankige lemmiklooma asukoht",
         "location_requested": "Tere! Palun jagage oma asukohta, et saaksime kohtuda.",
         "location_requested_from_owner": "Asukoht on küsitud. Ootame vastust.",
         "share_location": "Jagage asukohta",
-        "live_location_howto": "Palun jagage oma reaalajas asukohta botiga.\n\n📎 → «Asukoht» → «Jaga reaalajas asukohta» → valige kestus → saada.",
+        "live_location_howto": (
+            "Palun jagage oma reaalajas asukohta botiga.\n\n"
+            "📎 → «Asukoht» → «Jaga reaalajas asukohta» → "
+            "valige kestus → saada."
+        ),
         "request_location": "Palun andke mulle teada, kus te olete, jagades oma asukohta.",
         "location_shared_response": "Asukoht on jagatud. Palun oodake vastust. Jääge lähedale kuni kohtumiseni. Saate teate, kui olete lähedal.",
         "finder_live_received": "Bot sai teie kontakti asukoha. Palun jagage ka oma reaalajas asukohta, et saada heliteateid kohtumispunktile lähenedes.",
-        "alert_eror_location": "Reaalajas asukoha edastamine on peatanud. Palun jagage oma reaalajas asukohta uuesti.",
-        "navigation_hint_owner": "Lülituge navigeerimisrežiimi, et hinnata teekonna aega, seejärel teatage leidjale oma saabumisaeg.",
+        "alert_error_location": "Reaalajas asukoha edastamine on peatanud. Palun jagage oma reaalajas asukohta uuesti.",
+        "navigation_hint_owner": (
+            "Lülituge navigeerimisrežiimi, et hinnata teekonna aega, "
+            "seejärel teatage leidjale oma saabumisaeg."
+        ),
         "navigation_hint_user": "Teatage saabumisest või kutsuge vestlusse, kui on vaja muid kokkuleppeid",
         "arrive_10": "Saabun 10 minuti pärast",
         "arrive_20": "Saabun 20 minuti pärast",
         "arrive_30": "Saabun 30 minuti pärast",
+        "arrive_60": "Saabun tunni pärast",
         "start_chat": "Alusta vestlust",
         "arrival_owner_10": "Saabun 10 minuti jooksul, palun oodake mind oma asukohas.",
         "arrival_owner_20": "Saabun 20 minuti jooksul, palun oodake mind oma asukohas.",
         "arrival_owner_30": "Saabun 30 minuti jooksul, palun oodake mind oma asukohas.",
-        "arrival_timer_warning": "Peaksite jõudma määratud punkti {select_time} jooksul. Kui hilinete või plaanid on muutunud, uuendage oma saabumisaega selle menüü kaudu.",
+        "arrival_owner_60": "Saabun tunni jooksul, palun oodake mind oma asukohas.",
+        "arrival_timer_warning": (
+            "Peaksite jõudma määratud punkti {select_time} jooksul. "
+            "Kui hilinete või plaanid on muutunud, uuendage oma saabumisaega selle menüü kaudu."
+        ),
         "back": "Tagasi",
         "language_warning": "Hoiatus! Teie vestluspartner võib rääkida teist keelt",
         "accept_chat": "Nõustun",
         "invite_text": "Järgige linki {invite_link}, et jätkata suhtlemist grupiga {group_name}.",
-        "owner_chat_offer": "Lemmiklooma omanik kutsub teid vestlusse, et arutada alternatiivseid kohtumisvõimalusi.\nAllolev nupp viib teid vestlusele lemmiklooma omanikuga.",
+        "owner_chat_offer": (
+            "Lemmiklooma omanik kutsub teid vestlusse, et arutada alternatiivseid kohtumisvõimalusi.\n"
+            "Allolev nupp viib teid vestlusele lemmiklooma omanikuga."
+        ),
         "open_chat": "Ava vestlus",
         "chat_partner_joined_owner": "Vestluspartner liitus vestlusega edukalt. Palun liituge ka teie vestlusega, et arutada üksikasju.",
         "proximity_notification": "Olete lähedal! Aktiveerige heliparool, vaadake ringi ja kohtute!",
@@ -1091,7 +1200,12 @@ locales: Dict[str, Dict[str, str]] = {
         "finder_location_unavailable": "Vabandame, leidja praegune asukoht on ajutiselt kättesaamatu.",
     },
     "lv": {
-        "pet_info_message": "Šī ir mājdzīvnieka lapa: {pet_name}. Vecums: {age} gadi.\n\nJa jūs to lasāt, esmu apmaldījies. Es ļoti gribu atgriezties mājās pie savas saimnieka. Viņš mani ļoti mīl un manī trūkst.\nLūdzu, sazinieties ar viņu, izmantojot zemāk redzamo pogu, un palīdziet man atgriezties mājās.",
+        "pet_info_message": (
+            "Šī ir mājdzīvnieka lapa: {pet_name}. Vecums: {age} gadi.\n\n"
+            "Ja jūs to lasāt, esmu apmaldījies. Es ļoti gribu atgriezties mājās pie savas saimnieka. "
+            "Viņš mani ļoti mīl un manī trūkst.\n"
+            "Lūdzu, sazinieties ar viņu, izmantojot zemāk redzamo pogu, un palīdziet man atgriezties mājās."
+        ),
         "contact_owner": "Sazināties ar īpašnieku",
         "owner_alerted": "Īpašnieks ir informēts un drīz atbildēs.",
         "contact_action": "Kontakts",
@@ -1101,26 +1215,41 @@ locales: Dict[str, Dict[str, str]] = {
         "location_requested": "Sveiki! Lūdzu, koplietojiet savu atrašanās vietu, lai mēs varētu satikties.",
         "location_requested_from_owner": "Atrašanās vieta ir pieprasīta. Gaida atbildi.",
         "share_location": "Koplietot atrašanās vietu",
-        "live_location_howto": "Lūdzu, koplietojiet savu tiešsaistes atrašanās vietu ar botu.\n\n📎 → «Atrašanās vieta» → «Koplietot tiešsaistes atrašanās vietu» → atlasiet ilgumu → sūtīt.",
+        "live_location_howto": (
+            "Lūdzu, koplietojiet savu tiešsaistes atrašanās vietu ar botu.\n\n"
+            "📎 → «Atrašanās vieta» → «Koplietot tiešsaistes atrašanās vietu» → "
+            "atlasiet ilgumu → sūtīt."
+        ),
         "request_location": "Lūdzu, dariet man zināmu, kur atrodaties, koplietojot savu atrašanās vietu.",
         "location_shared_response": "Atrašanās vieta koplietota. Lūdzu, gaidiet atbildi. Palieciet tuvumā līdz tikšanās brīdim. Jūs saņemsit paziņojumu, kad būsiet tuvu.",
         "finder_live_received": "Bots saņēma atrašanās vietu no jūsu kontakta. Lūdzu, koplietojiet arī savu tiešsaistes atrašanās vietu, lai saņemtu audio paziņojumus, tuvojoties tikšanās vietai.",
-        "alert_eror_location": "Šķiet, ka tiešraides atrašanās vieta ir apstājusies. Lūdzu, vēlreiz koplietojiet savu tiešsaistes atrašanās vietu.",
-        "navigation_hint_owner": "Pārslēgties uz navigācijas režīmu, lai novērtētu ceļa laiku, pēc tam informējiet atradēju par ierašanās laiku.",
+        "alert_error_location": "Šķiet, ka tiešraides atrašanās vieta ir apstājusies. Lūdzu, vēlreiz koplietojiet savu tiešsaistes atrašanās vietu.",
+        "navigation_hint_owner": (
+            "Pārslēgties uz navigācijas režīmu, lai novērtētu ceļa laiku, "
+            "pēc tam informējiet atradēju par ierašanās laiku."
+        ),
         "navigation_hint_user": "Paziņojiet, kad ierodaties, vai uzaiciniet tērzēšanā, ja nepieciešami citi norādījumi",
         "arrive_10": "Ierodas pēc 10 minūtēm",
         "arrive_20": "Ierodas pēc 20 minūtēm",
         "arrive_30": "Ierodas pēc 30 minūtēm",
+        "arrive_60": "Ierodas pēc stundas",
         "start_chat": "Sākt tērzēšanu",
         "arrival_owner_10": "Ierodšos 10 minūšu laikā, lūdzu, gaidiet mani savā atrašanās vietā.",
         "arrival_owner_20": "Ierodšos 20 minūšu laikā, lūdzu, gaidiet mani savā atrašanās vietā.",
         "arrival_owner_30": "Ierodšos 30 minūšu laikā, lūdzu, gaidiet mani savā atrašanās vietā.",
-        "arrival_timer_warning": "Jums vajadzētu ierasties norādītajā punktā {select_time} laikā. Ja kavējaties vai plāni mainījušies, atjauniniet ierašanās laiku, izmantojot šo izvēlni.",
+        "arrival_owner_60": "Ierodšos stundas laikā, lūdzu, gaidiet mani savā atrašanās vietā.",
+        "arrival_timer_warning": (
+            "Jums vajadzētu ierasties norādītajā punktā {select_time} laikā. "
+            "Ja kavējaties vai plāni mainījušies, atjauniniet ierašanās laiku, izmantojot šo izvēlni."
+        ),
         "back": "Atpakaļ",
         "language_warning": "Brīdinājums! Jūsu sarunas partneris var runāt citu valodu",
         "accept_chat": "Pieņemt",
         "invite_text": "Sekojiet {invite_link}, lai turpinātu saziņu grupā {group_name}.",
-        "owner_chat_offer": "Mājdzīvnieka īpašnieks aicina jūs uz tērzēšanu, lai apspriestu alternatīvas tikšanās iespējas.\nZemāk redzamā poga aizvedīs jūs uz tērzēšanu ar mājdzīvnieka īpašnieku.",
+        "owner_chat_offer": (
+            "Mājdzīvnieka īpašnieks aicina jūs uz tērzēšanu, lai apspriestu alternatīvas tikšanās iespējas.\n"
+            "Zemāk redzamā poga aizvedīs jūs uz tērzēšanu ar mājdzīvnieka īpašnieku."
+        ),
         "open_chat": "Atvērt tērzēšanu",
         "chat_partner_joined_owner": "Sarunas partneris veiksmīgi pievienojās tērzēšanai. Lūdzu, pievienojieties arī jūs tērzēšanai, lai apspriestu detaļas.",
         "proximity_notification": "Jūs esat tuvumā! Ieslēdziet skaņas paroli, paskatieties apkārt un jūs satiksities!",
@@ -1134,7 +1263,12 @@ locales: Dict[str, Dict[str, str]] = {
         "finder_location_unavailable": "Atvainojiet, atradēja pašreizējā atrašanās vieta īslaicīgi nav pieejama.",
     },
     "lt": {
-        "pet_info_message": "Tai yra naminio gyvūno puslapis: {pet_name}. Amžius: {age} metai.\n\nJei jūs tai skaitote, aš pasiklydau. Aš labai noriu grįžti namo pas savo šeimininką. Jis mane labai myli ir pasiilgo.\nPrašome susisiekti su juo naudojant mygtuką žemiau ir padėkite man grįžti namo.",
+        "pet_info_message": (
+            "Tai yra naminio gyvūno puslapis: {pet_name}. Amžius: {age} metai.\n\n"
+            "Jei jūs tai skaitote, aš pasiklydau. Aš labai noriu grįžti namo pas savo šeimininką. "
+            "Jis mane labai myli ir pasiilgo.\n"
+            "Prašome susisiekti su juo naudojant mygtuką žemiau ir padėkite man grįžti namo."
+        ),
         "contact_owner": "Susisiekti su savininku",
         "owner_alerted": "Savininkas buvo informuotas ir netrukus atsakys.",
         "contact_action": "Kontaktas",
@@ -1144,37 +1278,52 @@ locales: Dict[str, Dict[str, str]] = {
         "location_requested": "Sveiki! Prašome pasidalinti savo vieta, kad galėtume susitikti.",
         "location_requested_from_owner": "Vieta užklausta. Laukiama atsakymo.",
         "share_location": "Pasidalinti vieta",
-        "live_location_howto": "Prašome pasidalinti savo tiesiogine vieta su botu.\n\n📎 → «Vieta» → «Pasidalinti tiesiogine vieta» → pasirinkite trukmę → siųsti.",
+        "live_location_howto": (
+            "Prašome pasidalinti savo tiesiogine vieta su botu.\n\n"
+            "📎 → «Vieta» → «Pasidalinti tiesiogine vieta» → "
+            "pasirinkite trukmę → siųsti."
+        ),
         "request_location": "Prašome pranešti man, kur esate, pasidalinant savo vieta.",
         "location_shared_response": "Vieta pasidalinta. Prašome laukti atsakymo. Likite arti iki susitikimo. Gausite pranešimą, kai būsite arti.",
         "finder_live_received": "Botas gavo vietą iš jūsų kontakto. Prašome taip pat pasidalinti savo tiesiogine vieta, kad gautumėte garso pranešimus artėjant prie susitikimo vietos.",
         "alert_eror_location": "Atrodo, tiesioginės vietos transliacija sustojo. Prašome dar kartą pasidalinti savo tiesiogine vieta.",
-        "navigation_hint_owner": "Perjunkite į navigacijos režimą, kad įvertintumėte kelionės laiką, tada praneškite radusiajam savo atvykimo laiką.",
+        "navigation_hint_owner": (
+            "Perjunkite į navigacijos režimą, kad įvertintumėte kelionės laiką, "
+            "tada praneškite radusiajam savo atvykimo laiką."
+        ),
         "navigation_hint_user": "Praneškite, kada atvyksite, arba pakvieskite į pokalbį, jei reikia kitų susitarimų",
         "arrive_10": "Atvyksiu per 10 minučių",
         "arrive_20": "Atvyksiu per 20 minučių",
         "arrive_30": "Atvyksiu per 30 minučių",
+        "arrive_60": "Atvyksiu per valandą",
         "start_chat": "Pradėti pokalbį",
-        "arrival_owner_10": "Atvyksiu per 10 minučių, prašome manęs palaukti savo vietoje.",
-        "arrival_owner_20": "Atvyksiu per 20 minučių, prašome manęs palaukti savo vietoje.",
-        "arrival_owner_30": "Atvyksiu per 30 minučių, prašome manęs palaukti savo vietoje.",
-        "arrival_timer_warning": "Turėtumėte atvykti į nurodytą tašką per {select_time}. Jei vėluojate ar planai pasikeitė, atnaujinkite savo atvykimo laiką per šį meniu.",
+        "arrival_owner_10": "Atvyksiu per 10 minučių, prašome palaukti manęs savo vietoje.",
+        "arrival_owner_20": "Atvyksiu per 20 minučių, prašome palaukti manęs savo vietoje.",
+        "arrival_owner_30": "Atvyksiu per 30 minučių, prašome palaukti manęs savo vietoje.",
+        "arrival_owner_60": "Atvyksiu per valandą, prašome palaukti manęs savo vietoje.",
+        "arrival_timer_warning": (
+            "Jūs turėtumėte atvykti į nurodytą vietą per {select_time}. "
+            "Jei vėluojate arba planai pasikeitė, atnaujinkite savo atvykimo laiką per šį meniu."
+        ),
         "back": "Atgal",
         "language_warning": "Įspėjimas! Jūsų pokalbio partneris gali kalbėti kita kalba",
         "accept_chat": "Priimti",
-        "invite_text": "Sekite {invite_link}, norėdami tęsti bendravimą grupėje {group_name}.",
-        "owner_chat_offer": "Naminio gyvūno savininkas kviečia jus į pokalbį aptarti alternatyvius susitikimo variantus.\nMygtukas žemiau nukels jus į pokalbį su naminio gyvūno savininku.",
+        "invite_text": "Sekite {invite_link}, kad tęstumėte bendravimą grupėje {group_name}.",
+        "owner_chat_offer": (
+            "Naminio gyvūno savininkas kviečia jus į pokalbį aptarti alternatyvių susitikimo galimybių.\n"
+            "Žemiau esantis mygtukas nuves jus į pokalbį su naminio gyvūno savininku."
+        ),
         "open_chat": "Atidaryti pokalbį",
-        "chat_partner_joined_owner": "Pokalbio partneris sėkmingai prisijungė prie pokalbio. Prašome taip pat prisijungti prie pokalbio aptarti detales.",
-        "proximity_notification": "Esate arti! Įjunkite garso slaptažodį, apsidairykite ir susitiksite!",
+        "chat_partner_joined_owner": "Pokalbio partneris sėkmingai prisijungė prie pokalbio. Prašome ir jūs prisijungti prie pokalbio aptarti detales.",
+        "proximity_notification": "Jūs esate netoliese! Įjunkite garso slaptažodį, apsidairykite ir susitiksite!",
         "sound_password": "Garso slaptažodis",
-        "playing_sound_password": "Grojamas garso slaptažodis (30 sekundžių)…",
+        "playing_sound_password": "Atkuriamas garso slaptažodis (30 sekundžių)…",
         "after_sound_prompt": "*==============================*",
-        "mission_done": "Misija atlikta!",
-        "check_owner_location": "Patikrinkite savininko vietą",
-        "check_finder_location": "Patikrinkite radusiojo vietą",
-        "owner_location_unavailable": "Atsiprašome, savininko dabartinė vieta laikinai neprieinama.",
-        "finder_location_unavailable": "Atsiprašome, radusiojo dabartinė vieta laikinai neprieinama.",
+        "mission_done": "Misija įvykdyta!",
+        "check_owner_location": "Patikrinti savininko vietą",
+        "check_finder_location": "Patikrinti radėjo vietą",
+        "owner_location_unavailable": "Atsiprašome, savininko dabartinė vieta laikinai nepasiekiama.",
+        "finder_location_unavailable": "Atsiprašome, radėjo dabartinė vieta laikinai nepasiekiama.",
     },
     "fi": {
         "pet_info_message": "Tämä on lemmikin sivu: {pet_name}. Ikä: {age} vuotta.\n\nJos luet tätä, olen eksynyt. Haluan todella kotiin omistajani luo. Hän rakastaa minua erittäin paljon ja kaipaa minua.\nOta yhteyttä häneseen alla olevasta painikkeesta ja auta minua kotiin.",
@@ -1191,16 +1340,18 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Kerro minulle, missä olet, jakamalla sijaintisi.",
         "location_shared_response": "Sijainti jaettu. Odota vastausta. Pysy lähellä tapaamiseen saakka. Saat ilmoituksen, kun olet lähellä.",
         "finder_live_received": "Botti vastaanotti sijainnin yhteystiedostasi. Ole hyvä ja jaa myös reaaliaikainen sijaintisi saadaksesi äänilmoituksia lähestyessäsi tapaamispaikkaa.",
-        "alert_eror_location": "Reaaliaikainen sijaintiniesto näyttää pysähtyneen. Ole hyvä ja jaa reaaliaikainen sijaintisi uudelleen.",
-        "navigation_hint_owner": "Vaihda navigointitilaan arvioidaksesi matka-aika, then ilmoita löytäjälle saapumisaikasi.",
+        "alert_error_location": "Reaaliaikainen sijaintijako näyttää pysähtyneen. Ole hyvä ja jaa reaaliaikainen sijaintisi uudelleen.",
+        "navigation_hint_owner": "Vaihda navigointitilaan arvioidaksesi matka-ajan, sitten ilmoita löytäjälle saapumisaikasi.",
         "navigation_hint_user": "Ilmoita saapuessasi tai kutsu chattiin, jos muita järjestelyitä tarvitaan",
         "arrive_10": "Saavun 10 minuutissa",
         "arrive_20": "Saavun 20 minuutissa",
         "arrive_30": "Saavun 30 minuutissa",
-        "start_chat": "Aloja keskustelu",
+        "arrive_60": "Saavun tunnin kuluttua",
+        "start_chat": "Aloita keskustelu",
         "arrival_owner_10": "Saavun 10 minuutin kuluessa, odota minua sijainnissasi.",
         "arrival_owner_20": "Saavun 20 minuutin kuluessa, odota minua sijainnissasi.",
         "arrival_owner_30": "Saavun 30 minuutin kuluessa, odota minua sijainnissasi.",
+        "arrival_owner_60": "Saavun tunnin kuluessa, odota minua sijainnissasi.",
         "arrival_timer_warning": "Sinun tulisi saapua määrättyyn pisteeseen {select_time} kuluessa. Jos myöhästyt tai suunnitelmat muuttuvat, päivitä saapumisaikasi tämän valikon kautta.",
         "back": "Takaisin",
         "language_warning": "Varoitus! Keskustelukumppanisi saattaa puhua eri kieltä",
@@ -1234,16 +1385,18 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Vänligen meddela mig var du är genom att dela din plats.",
         "location_shared_response": "Plats delad. Vänta på svar. Stanna i närheten till mötet. Du får ett meddelande när du är nära.",
         "finder_live_received": "Botten mottog plats från din kontakt. Vänligen dela också din live-plats för att få ljudmeddelanden när du närmar dig mötesplatsen.",
-        "alert_eror_location": "Live-platsdelning verkar ha stoppats. Vänligen dela din live-plats igen.",
+        "alert_error_location": "Live-platsdelning verkar ha stoppats. Vänligen dela din live-plats igen.",
         "navigation_hint_owner": "Växla till navigeringsläge för att uppskatta restid, meddela sedan hittaren om din ankomsttid.",
         "navigation_hint_user": "Meddela när du anländer eller bjud in till chatt om andra arrangemang behövs",
         "arrive_10": "Ankommer om 10 minuter",
         "arrive_20": "Ankommer om 20 minuter",
         "arrive_30": "Ankommer om 30 minuter",
+        "arrive_60": "Ankommer om en timme",
         "start_chat": "Starta chatt",
         "arrival_owner_10": "Jag anländer inom 10 minuter, vänta på mig på din plats.",
         "arrival_owner_20": "Jag anländer inom 20 minuter, vänta på mig på din plats.",
         "arrival_owner_30": "Jag anländer inom 30 minuter, vänta på mig på din plats.",
+        "arrival_owner_60": "Jag anländer inom en timme, vänta på mig på din plats.",
         "arrival_timer_warning": "Du bör anlända till den angivna punkten inom {select_time}. Om du är försenad eller planerna ändras, uppdatera din ankomsttid via denna meny.",
         "back": "Tillbaka",
         "language_warning": "Varning! Din samtalspartner kan tala ett annat språk",
@@ -1251,7 +1404,7 @@ locales: Dict[str, Dict[str, str]] = {
         "invite_text": "Följ {invite_link} för att fortsätta kommunikationen i gruppen {group_name}.",
         "owner_chat_offer": "Husdjursägaren bjuder in dig till en chatt för att diskutera alternativa mötesalternativ.\nKnappen nedan tar dig till chatt med husdjursägaren.",
         "open_chat": "Öppna chatt",
-        "chat_partner_joined_owner": "Samtalspartnern anslöt sig framgångsrikt till chatt",
+        "chat_partner_joined_owner": "Samtalspartnern anslöt sig framgångsrikt till chatten. Vänligen gå också med i chatten för att diskutera detaljer.",
         "proximity_notification": "Du är nära! Aktivera ljudlösen, titta runt och ni kommer att mötas!",
         "sound_password": "Ljudlösen",
         "playing_sound_password": "Spelar upp ljudlösen (30 sekunder)...",
@@ -1275,18 +1428,20 @@ locales: Dict[str, Dict[str, str]] = {
         "share_location": "Del placering",
         "live_location_howto": "Del venligst din liveplacering med boten.\n\n📎 → «Placering» → «Del liveplacering» → vælg varighed → send.",
         "request_location": "Del venligst din placering, så jeg ved hvor du er.",
-        "location_shared_response": "Placering delt. Afvent svar. Bliv i nærheden til mødet. Du modtager en notifikation när du er nær.",
-        "finder_live_received": "Botten modtog placering fra din kontakt. Del venligst også din liveplacering for at modtage lydnotifikationer när du nærmer dig mødestedet.",
-        "alert_eror_location": "Liveplacering ser ud til at være stoppet. Del venligst din liveplacering igen.",
+        "location_shared_response": "Placering delt. Afvent svar. Bliv i nærheden til mødet. Du modtager en notifikation når du er nær.",
+        "finder_live_received": "Botten modtog placering fra din kontakt. Del venligst også din liveplacering for at modtage lydnotifikationer når du nærmer dig mødestedet.",
+        "alert_error_location": "Liveplacering ser ud til at være stoppet. Del venligst din liveplacering igen.",
         "navigation_hint_owner": "Skift til navigations tilstand for at estimere rejsetid, og informer derefter finderen om din ankomsttid.",
-        "navigation_hint_user": "Meddel när du ankommer eller inviter til chat hvis andre arrangementer er nødvendige",
+        "navigation_hint_user": "Meddel når du ankommer eller inviter til chat hvis andre arrangementer er nødvendige",
         "arrive_10": "Ankommer om 10 minutter",
         "arrive_20": "Ankommer om 20 minutter",
         "arrive_30": "Ankommer om 30 minutter",
+        "arrive_60": "Ankommer om en time",
         "start_chat": "Start chat",
         "arrival_owner_10": "Jeg ankommer indenfor 10 minutter, vent venligst på mig på din placering.",
         "arrival_owner_20": "Jeg ankommer indenfor 20 minutter, vent venligst på mig på din placering.",
         "arrival_owner_30": "Jeg ankommer indenfor 30 minutter, vent venligst på mig på din placering.",
+        "arrival_owner_60": "Jeg ankommer indenfor en time, vent venligst på mig på din placering.",
         "arrival_timer_warning": "Du bør ankomme til det angivne sted indenfor {select_time}. Hvis du er forsinket eller planerne ændres, opdater din ankomsttid via denne menu.",
         "back": "Tilbage",
         "language_warning": "Advarsel! Din samtalepartner taler muligvis et andet sprog",
@@ -1314,22 +1469,24 @@ locales: Dict[str, Dict[str, str]] = {
         "location_instruction": "Be om den andre persons plassering for å avtale et møte.",
         "request_pet_location": "Få dyrets plassering",
         "location_requested": "Hei! Vennligst del din plassering så vi kan møtes.",
-        "location_requested_from_owner": "Plassering forespurt. Ventar på svar.",
+        "location_requested_from_owner": "Plassering forespurt. Venter på svar.",
         "share_location": "Del plassering",
         "live_location_howto": "Vennligst del din liveplassering med boten.\n\n📎 → «Plassering» → «Del liveplassering» → velg varighet → send.",
         "request_location": "Vennligst gi meg beskjed om hvor du er ved å dele din plassering.",
-        "location_shared_response": "Plassering delt. Vent på svar. Bli i nærheten til møtet. Du vil motta en varsling när du er nær.",
-        "finder_live_received": "Botten mottok plassering fra din kontakt. Vennligst del også din liveplassering for å motta lydvarsler när du nærmer deg møtestedet.",
-        "alert_eror_location": "Liveplassering ser ut til å ha stoppet. Vennligst del din liveplassering på nytt.",
+        "location_shared_response": "Plassering delt. Vent på svar. Bli i nærheten til møtet. Du vil motta en varsling når du er nær.",
+        "finder_live_received": "Botten mottok plassering fra din kontakt. Vennligst del også din liveplassering for å motta lydvarsler når du nærmer deg møtestedet.",
+        "alert_error_location": "Liveplassering ser ut til å ha stoppet. Vennligst del din liveplassering på nytt.",
         "navigation_hint_owner": "Bytt til navigasjonsmodus for å estimere reisetid, deretter informer finneren om ankomsttiden din.",
-        "navigation_hint_user": "Varsle när du ankommer eller inviter til chat hvis andre avtaler er nødvendig",
+        "navigation_hint_user": "Varsle når du ankommer eller inviter til chat hvis andre avtaler er nødvendig",
         "arrive_10": "Ankommer om 10 minutter",
         "arrive_20": "Ankommer om 20 minutter",
         "arrive_30": "Ankommer om 30 minutter",
+        "arrive_60": "Ankommer om en time",
         "start_chat": "Start chat",
         "arrival_owner_10": "Jeg ankommer innen 10 minutter, vennligst vent på meg på din plassering.",
         "arrival_owner_20": "Jeg ankommer innen 20 minutter, vennligst vent på meg på din plassering.",
         "arrival_owner_30": "Jeg ankommer innen 30 minutter, vennligst vent på meg på din plassering.",
+        "arrival_owner_60": "Jeg ankommer innen en time, vennligst vent på meg på din plassering.",
         "arrival_timer_warning": "Du bør ankomme til det angitte stedet innen {select_time}. Hvis du er forsinket eller planene endres, oppdater ankomsttiden din via denne menyen.",
         "back": "Tilbake",
         "language_warning": "Advarsel! Samtalepartneren din snakker kanskje et annet språk",
@@ -1349,7 +1506,7 @@ locales: Dict[str, Dict[str, str]] = {
         "finder_location_unavailable": "Beklager, finnerens nåværende plassering er midlertidig utilgjengelig.",
     },
     "el": {
-        "pet_info_message": "Αυτή είναι η σελίδα του κατοικίδιου: {pet_name}. Ηλικία: {age} έτη.\n\nΑν διαβάζετε αυτό, έχω χαθεί. Θέλω πραγματικά να γυρίσω σπίτι στον ιδιοκτήτη μου. Μου αγαπάει πολύ και μου λείπει.\nΠαρακαλώ επικοινωνήστε μαζί του χρησιμοποιώντας το κουμπί παρακάτω και βοηθήστε με να γυρίσω σπίτι.",
+        "pet_info_message": "Αυτή είναι η σελίδα του κατοικίδιου: {pet_name}. Ηλικία: {age} έτη.\n\nΑν διαβάζετε αυτό, έχω χαθεί. Θέλω πραγματικά να γυρίσω σπίτι στον ιδιοκτήτη μου. Με αγαπάει πολύ και του λείπω.\nΠαρακαλώ επικοινωνήστε μαζί του χρησιμοποιώντας το κουμπί παρακάτω και βοηθήστε με να γυρίσω σπίτι.",
         "contact_owner": "Επικοινωνία με ιδιοκτήτη",
         "owner_alerted": "Ο ιδιοκτήτης έχει ειδοποιηθεί και θα απαντήσει σύντομα.",
         "contact_action": "Επικοινωνία",
@@ -1359,37 +1516,39 @@ locales: Dict[str, Dict[str, str]] = {
         "location_requested": "Γεια σας! Παρακαλώ μοιραστείτε την τοποθεσία σας για να συναντηθούμε.",
         "location_requested_from_owner": "Ζητήθηκε τοποθεσία. Αναμονή απάντησης.",
         "share_location": "Κοινοποίηση τοποθεσίας",
-        "live_location_howto": "Παρακαλώ μοιραστείτε την live τοποθεσία σας με το bot.\n\n📎 → «Τοποθεσία» → «Κοινοποίηση live τοποθεσίας» → επιλέξτε διάρκεια → αποστολή.",
+        "live_location_howto": "Παρακαλώ μοιραστείτε την ζωντανή τοποθεσία σας με το bot.\n\n📎 → «Τοποθεσία» → «Κοινοποίηση ζωντανής τοποθεσίας» → επιλέξτε διάρκεια → αποστολή.",
         "request_location": "Παρακαλώ ενημερώστε με πού βρίσκεστε μοιράζοντας την τοποθεσία σας.",
         "location_shared_response": "Τοποθεσία κοινοποιήθηκε. Παρακαλώ περιμένετε απάντηση. Μείνετε κοντά μέχρι τη συνάντηση. Θα λάβετε ειδοποίηση όταν είστε κοντά.",
-        "finder_live_received": "Το bot έλαβε τοποθεσία από την επαφή σας. Παρακαλώ μοιραστείτε και την live τοποθεσία σας για να λαμβάνετε ηχητικές ειδοποιήσεις όταν πλησιάζετε το σημείο συνάντησης.",
-        "alert_eror_location": "Η live τοποθεσία φαίνεται να έχει σταματήσει. Παρακαλώ μοιραστείτε ξανά την live τοποθεσία σας.",
-        "navigation_hint_owner": "Αλλάξτε σε λειτουργία πλοήγησης για να εκτιμήσετε το χρόνο ταξιδιού, затем ενημερώστε τον βρήκα για την ώρα άφιξής σας.",
-        "navigation_hint_user": "Ειδοποιήστε quando φτάνετε ή invite to chat se necessário",
+        "finder_live_received": "Το bot έλαβε τοποθεσία από την επαφή σας. Παρακαλώ μοιραστείτε και την ζωντανή τοποθεσία σας για να λαμβάνετε ηχητικές ειδοποιήσεις όταν πλησιάζετε το σημείο συνάντησης.",
+        "alert_error_location": "Η ζωντανή τοποθεσία φαίνεται να έχει σταματήσει. Παρακαλώ μοιραστείτε ξανά την ζωντανή τοποθεσία σας.",
+        "navigation_hint_owner": "Αλλάξτε σε λειτουργία πλοήγησης για να εκτιμήσετε το χρόνο ταξιδιού, στη συνέχεια ενημερώστε τον εύρετη για την ώρα άφιξής σας.",
+        "navigation_hint_user": "Ειδοποιήστε όταν φτάνετε ή προσκαλέστε σε συνομιλία εάν χρειάζονται άλλες ρυθμίσεις",
         "arrive_10": "Φθάνω σε 10 λεπτά",
         "arrive_20": "Φθάνω σε 20 λεπτά",
         "arrive_30": "Φθάνω σε 30 λεπτά",
+        "arrive_60": "Φθάνω σε μια ώρα",
         "start_chat": "Έναρξη συνομιλίας",
         "arrival_owner_10": "Θα φθάσω εντός 10 λεπτών, παρακαλώ περιμένετε με στην τοποθεσία σας.",
         "arrival_owner_20": "Θα φθάσω εντός 20 λεπτών, παρακαλώ περιμένετε με στην τοποθεσία σας.",
-        "arrival_owner_30": "Θа φθάσω εντός 30 λεπτών, παρακαλώ περιμένετε με στην τοποθεσία σας.",
+        "arrival_owner_30": "Θα φθάσω εντός 30 λεπτών, παρακαλώ περιμένετε με στην τοποθεσία σας.",
+        "arrival_owner_60": "Θα φθάσω εντός μιας ώρας, παρακαλώ περιμένετε με στην τοποθεσία σας.",
         "arrival_timer_warning": "Θα πρέπει να φθάσετε στο καθορισμένο σημείο εντός {select_time}. Αν καθυστερείτε ή αλλάξουν τα σχέδια, ενημερώστε την ώρα άφιξής σας μέσω αυτού του μενού.",
         "back": "Πίσω",
-        "language_warning": "Προσοχή! Ο συνομιλητής σας μιλάει διαφορετική γλώσσα",
+        "language_warning": "Προσοχή! Ο συνομιλητής σας μπορεί να μιλάει διαφορετική γλώσσα",
         "accept_chat": "Αποδοχή",
         "invite_text": "Ακολουθήστε {invite_link} για να συνεχίσετε την επικοινωνία στην ομάδα {group_name}.",
         "owner_chat_offer": "Ο ιδιοκτήτης του κατοικίδιου σας προσκαλεί σε συνομιλία για να συζητήσετε εναλλακτικές επιλογές συνάντησης.\nΤο κουμπί παρακάτω θα σας οδηγήσει σε συνομιλία με τον ιδιοκτήτη.",
         "open_chat": "Άνοιγμα συνομιλίας",
-        "chat_partner_joined_owner": "Ο συνομιλητής joined successfully. Παρακαλώ μπείτε και εσείς στη συνομιλία για συζήτηση λεπτομερειών.",
+        "chat_partner_joined_owner": "Ο συνομιλητής συμμετείχε επιτυχώς. Παρακαλώ μπείτε και εσείς στη συνομιλία για συζήτηση λεπτομερειών.",
         "proximity_notification": "Είστε κοντά! Ενεργοποιήστε τον ηχητικό κωδικό, κοιτάξτε γύρω και θα συναντηθείτε!",
         "sound_password": "Ηχητικός κωδικός",
         "playing_sound_password": "Αναπαραγωγή ηχητικού κωδικού (30 δευτερόλεπτα)...",
         "after_sound_prompt": "*==============================*",
         "mission_done": "Αποστολή ολοκληρώθηκε!",
         "check_owner_location": "Έλεγχος τοποθεσίας ιδιοκτήτη",
-        "check_finder_location": "Έλεγχος τοποθεσίας του βρήκα",
+        "check_finder_location": "Έλεγχος τοποθεσίας εύρετη",
         "owner_location_unavailable": "Συγγνώμη, η τρέχουσα τοποθεσία του ιδιοκτήτη είναι προσωρινά μη διαθέσιμη.",
-        "finder_location_unavailable": "Συγγνώμη, η τρέχουσα τοποθεσία του βρήκα είναι προσωρινά μη διαθέσιμη.",
+        "finder_location_unavailable": "Συγγνώμη, η τρέχουσα τοποθεσία του εύρετη είναι προσωρινά μη διαθέσιμη.",
     },
     "ja": {
         "pet_info_message": "これはペットのページです: {pet_name}。年齢: {age} 歳。\n\nこれを読んでいるなら、私は迷子です。飼い主の元に帰りたいです。飼い主は私をとても愛していて、寂しがっています。\n下のボタンから飼い主に連絡して、家に帰れるように助けてください。",
@@ -1406,16 +1565,18 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "場所を共有して、あなたの場所を教えてください。",
         "location_shared_response": "場所が共有されました。返信をお待ちください。会うまでその近くにいてください。近づくと通知が届きます。",
         "finder_live_received": "ボットが連絡先から位置情報を受信しました。会合地点に近づいたときに音声通知を受け取るには、ライブ位置情報も共有してください。",
-        "alert_eror_location": "ライブ位置情報が停止したようです。もう一度ライブ位置情報を共有してください。",
+        "alert_error_location": "ライブ位置情報が停止したようです。もう一度ライブ位置情報を共有してください。",
         "navigation_hint_owner": "移動時間を見積もるためにナビゲーションモードに切り替え、到着時間を発見者に通知してください。",
-        "navigation_hint_user": "到着時通知或聊天邀请如需其他安排",
+        "navigation_hint_user": "到着時に通知するか、他の手配が必要な場合はチャットに招待してください",
         "arrive_10": "10分で到着",
         "arrive_20": "20分で到着",
         "arrive_30": "30分で到着",
+        "arrive_60": "1時間後に到着",
         "start_chat": "チャット開始",
         "arrival_owner_10": "10分以内に到着しますので、あなたの場所で待っていてください。",
         "arrival_owner_20": "20分以内に到着しますので、あなたの場所で待っていてください。",
         "arrival_owner_30": "30分以内に到着しますので、あなたの場所で待っていてください。",
+        "arrival_owner_60": "1時間以内に到着しますので、あなたの場所で待っていてください。",
         "arrival_timer_warning": "{select_time} 以内に指定されたポイントに到着する必要があります。遅延または計画変更がある場合は、このメニューから到着時間を更新してください。",
         "back": "戻る",
         "language_warning": "警告！会話相手は異なる言語を話す可能性があります",
@@ -1449,7 +1610,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "请分享你的位置，让我知道你在哪里。",
         "location_shared_response": "位置已分享。请等待回复。在见面之前请保持在附近。当你靠近时会收到通知。",
         "finder_live_received": "机器人收到了你联系人的位置。请也分享你的实时位置，以便在接近会面点时收到声音通知。",
-        "alert_eror_location": "实时位置似乎已停止。请重新分享你的实时位置。",
+        "alert_error_location": "实时位置似乎已停止。请重新分享你的实时位置。",
         "navigation_hint_owner": "切换到导航模式以估计旅行时间，然后通知发现者你的到达时间。",
         "navigation_hint_user": "到达时通知或邀请聊天如需其他安排",
         "arrive_10": "10分钟内到达",
@@ -1459,6 +1620,8 @@ locales: Dict[str, Dict[str, str]] = {
         "arrival_owner_10": "我在10分钟内到达，请在你的位置等我。",
         "arrival_owner_20": "我在20分钟内到达，请在你的位置等我。",
         "arrival_owner_30": "我在30分钟内到达，请在你的位置等我。",
+        "arrival_owner_60": "我在一小时内到达，请在你的位置等我。",
+        "arrive_60": "一小时内到达",
         "arrival_timer_warning": "你应该在 {select_time} 内到达指定点。如果延迟或计划变更，请通过此菜单更新你的到达时间。",
         "back": "返回",
         "language_warning": "警告！你的对话伙伴可能使用不同的语言",
@@ -1478,47 +1641,49 @@ locales: Dict[str, Dict[str, str]] = {
         "finder_location_unavailable": "抱歉，发现者当前的位置暂时不可用。",
     },
     "ko": {
-        "pet_info_message": "这是宠物页面: {pet_name}。年龄: {age} 岁。\n\n如果你看到这个，说明我迷路了。我很想回到我的主人身边。他非常爱我，也很想念我。\n请通过下面的按钮联系他，帮我回家。",
-        "contact_owner": "联系主人",
-        "owner_alerted": "已通知主人，很快就会回复。",
-        "contact_action": "联系",
-        "owner_found_pet": "你好！我找到了你的宠物。请联系我，我很乐意归还。",
-        "location_instruction": "请求对方的位置以安排会面。",
-        "request_pet_location": "获取宠物位置",
-        "location_requested": "你好！请分享你的位置，以便我们见面。",
-        "location_requested_from_owner": "已请求位置。等待回复中。",
-        "share_location": "分享位置",
-        "live_location_howto": "请与机器人分享你的实时位置。\n\n📎 → «位置» → «分享实时位置» → 选择持续时间 → 发送。",
-        "request_location": "请分享你的位置，让我知道你在哪里。",
-        "location_shared_response": "位置已分享。请等待回复。在见面之前请保持在附近。当你靠近时会收到通知。",
-        "finder_live_received": "机器人收到了你联系人的位置。请也分享你的实时位置，以便在接近会面点时收到声音通知。",
-        "alert_eror_location": "实时位置似乎已停止。请重新分享你的实时位置。",
-        "navigation_hint_owner": "切换到导航模式以估计旅行时间，然后通知发现者你的到达时间。",
-        "navigation_hint_user": "到达时通知或邀请聊天如需其他安排",
-        "arrive_10": "10分钟内到达",
-        "arrive_20": "20分钟内到达",
-        "arrive_30": "30分钟内到达",
-        "start_chat": "开始聊天",
-        "arrival_owner_10": "我在10分钟内到达，请在你的位置等我。",
-        "arrival_owner_20": "我在20分钟内到达，请在你的位置等我。",
-        "arrival_owner_30": "我在30分钟内到达，请在你的位置等我。",
-        "arrival_timer_warning": "你应该在 {select_time} 内到达指定点。如果延迟或计划变更，请通过此菜单更新你的到达时间。",
-        "back": "返回",
-        "language_warning": "警告！你的对话伙伴可能使用不同的语言",
-        "accept_chat": "接受",
-        "invite_text": "跟随 {invite_link} 以在 {group_name} 群组中继续通信。",
-        "owner_chat_offer": "宠物主人邀请你聊天讨论其他会面选项。\n下面的按钮将带你与宠物主人聊天。",
-        "open_chat": "打开聊天",
-        "chat_partner_joined_owner": "对方成功加入聊天。请也加入聊天以讨论细节。",
-        "proximity_notification": "你在附近！启用声音密码，环顾四周，你们就会见面！",
-        "sound_password": "声音密码",
-        "playing_sound_password": "播放声音密码（30秒）…",
+        "pet_info_message": "이것은 반려동물 페이지입니다: {pet_name}. 나이: {age} 살.\n\n이것을 읽고 있다면, 저는 길을 잃었습니다. 정말로 주인에게 돌아가고 싶습니다. 주인은 저를 매우 사랑하고 그리워하고 있습니다.\n아래 버튼을 통해 주인에게 연락하여 집에 돌아갈 수 있도록 도와주세요.",
+        "contact_owner": "주인에게 연락",
+        "owner_alerted": "주인에게 알림이 전송되었으며 곧 응답할 것입니다.",
+        "contact_action": "연락",
+        "owner_found_pet": "안녕하세요! 당신의 반려동물을 찾았습니다. 연락해 주시면 기꺼이 돌려드리겠습니다.",
+        "location_instruction": "만남을 주선하기 위해 상대방의 위치를 요청하세요.",
+        "request_pet_location": "반려동물 위치 가져오기",
+        "location_requested": "안녕하세요! 만날 수 있도록 위치를 공유해 주세요.",
+        "location_requested_from_owner": "위치가 요청되었습니다. 응답을 기다리고 있습니다.",
+        "share_location": "위치 공유",
+        "live_location_howto": "봇과 실시간 위치를 공유해 주세요.\n\n📎 → «위치» → «실시간 위치 공유» → 지속 시간 선택 → 전송.",
+        "request_location": "위치를 공유하여 어디에 있는지 알려주세요.",
+        "location_shared_response": "위치가 공유되었습니다. 응답을 기다려 주세요. 만날 때까지 근처에 머물러 주세요. 가까워지면 알림을 받게 됩니다.",
+        "finder_live_received": "봇이 연락처로부터 위치를 받았습니다. 만남 지점에 접근할 때 음성 알림을 받으려면 실시간 위치도 공유해 주세요.",
+        "alert_error_location": "실시간 위치가 중단된 것 같습니다. 실시간 위치를 다시 공유해 주세요.",
+        "navigation_hint_owner": "이동 시간을 추정하기 위해 내비게이션 모드로 전환한 다음, 발견자에게 도착 시간을 알려주세요.",
+        "navigation_hint_user": "도착 시 알리거나 다른 약속이 필요한 경우 채팅에 초대하세요",
+        "arrive_10": "10분 후 도착",
+        "arrive_20": "20분 후 도착",
+        "arrive_30": "30분 후 도착",
+        "arrive_60": "한 시간 후 도착",
+        "start_chat": "채팅 시작",
+        "arrival_owner_10": "10분 이내에 도착하겠습니다. 당신의 위치에서 기다려 주세요.",
+        "arrival_owner_20": "20분 이내에 도착하겠습니다. 당신의 위치에서 기다려 주세요.",
+        "arrival_owner_30": "30분 이내에 도착하겠습니다. 당신의 위치에서 기다려 주세요.",
+        "arrival_owner_60": "한 시간 이내에 도착하겠습니다. 당신의 위치에서 기다려 주세요.",
+        "arrival_timer_warning": "{select_time} 이내에 지정된 지점에 도착해야 합니다. 지연되거나 계획이 변경되면 이 메뉴를 통해 도착 시간을 업데이트하세요.",
+        "back": "뒤로",
+        "language_warning": "경고! 대화 상대가 다른 언어를 사용할 수 있습니다",
+        "accept_chat": "수락",
+        "invite_text": "{invite_link}을 따라 {group_name} 그룹에서 계속 소통하세요.",
+        "owner_chat_offer": "반려동물 주인이 대안적인 만남 옵션을 논의하기 위해 채팅에 초대합니다.\n아래 버튼을 클릭하면 반려동물 주인과의 채팅으로 이동합니다.",
+        "open_chat": "채팅 열기",
+        "chat_partner_joined_owner": "상대방이 채팅에 성공적으로 참여했습니다. 세부 사항을 논의하기 위해 채팅에 참여해 주세요.",
+        "proximity_notification": "근처에 있습니다! 음성 비밀번호를 활성화하고 주변을 둘러보면 만날 수 있습니다!",
+        "sound_password": "음성 비밀번호",
+        "playing_sound_password": "음성 비밀번호 재생 중 (30초)...",
         "after_sound_prompt": "*==============================*",
-        "mission_done": "任务完成！",
-        "check_owner_location": "检查主人的位置",
-        "check_finder_location": "检查发现者的位置",
-        "owner_location_unavailable": "抱歉，主人当前的位置暂时不可用。",
-        "finder_location_unavailable": "抱歉，发现者当前的位置暂时不可用。",
+        "mission_done": "임무 완료!",
+        "check_owner_location": "주인의 위치 확인",
+        "check_finder_location": "발견자의 위치 확인",
+        "owner_location_unavailable": "죄송합니다. 주인의 현재 위치를 일시적으로 사용할 수 없습니다.",
+        "finder_location_unavailable": "죄송합니다. 발견자의 현재 위치를 일시적으로 사용할 수 없습니다.",
     },
     "ar": {
         "pet_info_message": "هذه صفحة الحيوان الأليف: {pet_name}. العمر: {age} سنة.\n\nإذا كنت تقرأ هذا، فأنا ضائع. أريد حقًا العودة إلى المنزل إلى مالكي. يحبني كثيرًا ويشتاق لي.\nيرجى الاتصال به باستخدام الزر أدناه ومساعدتي في العودة إلى المنزل.",
@@ -1535,17 +1700,19 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "يرجى إعلامي بمكانك عن طريق مشاركة موقعك.",
         "location_shared_response": "تم مشاركة الموقع. يرجى الانتظار للرد. ابق قريبًا حتى اللقاء. ستصلك إشعار عندما تكون قريبًا.",
         "finder_live_received": "تلقى البوت موقعًا من جهة اتصالك. يرجى أيضًا مشاركة موقعك المباشر لتلقي إشعارات صوتية عند الاقتراب من نقطة اللقاء.",
-        "alert_eror_location": "يبدو أن البث المباشر للموقع قد توقف. يرجى مشاركة موقعك المباشر مرة أخرى.",
+        "alert_error_location": "يبدو أن البث المباشر للموقع قد توقف. يرجى مشاركة موقعك المباشر مرة أخرى.",
         "navigation_hint_owner": "انتقل إلى وضع الملاحة لتقدير وقت السفر، ثم أبلغ الشخص الذي وجد الحيوان بوقت وصولك.",
-        "navigation_hint_user": "أبلغ عند الوصول أو ادعُ إلى الدردشة إذا كانت هناك ترتيبات أخرى needed",
+        "navigation_hint_user": "أبلغ عند الوصول أو ادعُ إلى الدردشة إذا كانت هناك ترتيبات أخرى مطلوبة",
         "arrive_10": "سأصل خلال 10 دقائق",
         "arrive_20": "سأصل خلال 20 دقيقة",
         "arrive_30": "سأصل خلال 30 دقيقة",
+        "arrive_60": "سأصل خلال ساعة",
         "start_chat": "بدء الدردشة",
         "arrival_owner_10": "سأصل خلال 10 دقائق، يرجى انتظاري في موقعك.",
         "arrival_owner_20": "سأصل خلال 20 دقيقة، يرجى انتظاري في موقعك.",
         "arrival_owner_30": "سأصل خلال 30 دقيقة، يرجى انتظاري في موقعك.",
-        "arrival_timer_warning": "يجب أن تصل إلى النقطة المحددة خلال {select_time}. إذا تأخرت أو تغيرت الخطط، فقم بتحديث وقت وصولك through this menu.",
+        "arrival_owner_60": "سأصل خلال ساعة، يرجى انتظاري في موقعك.",
+        "arrival_timer_warning": "يجب أن تصل إلى النقطة المحددة خلال {select_time}. إذا تأخرت أو تغيرت الخطط، فقم بتحديث وقت وصولك من خلال هذه القائمة.",
         "back": "عودة",
         "language_warning": "تحذير! قد يتحدث شريك المحادثة لغة مختلفة",
         "accept_chat": "قبول",
@@ -1560,62 +1727,65 @@ locales: Dict[str, Dict[str, str]] = {
         "mission_done": "تمت المهمة!",
         "check_owner_location": "تحقق من موقع المالك",
         "check_finder_location": "تحقق من موقع الشخص الذي وجد الحيوان",
-        "owner_location_unavailable": "عذرًا، موقع المالك الحالي غير متاح temporarily.",
-        "finder_location_unavailable": "عذرًا، موقع الشخص الذي وجد الحيوان غير متاح temporarily.",
+        "owner_location_unavailable": "عذرًا، موقع المالك الحالي غير متاح مؤقتًا.",
+        "finder_location_unavailable": "عذرًا، موقع الشخص الذي وجد الحيوان غير متاح مؤقتًا.",
     },
     "he": {
-        "pet_info_message": "זוהי דף החיה: {pet_name}. גיל: {age} שנים.\n\nאם אתה קורא this, אני הלכתי לאיבוד. אני真的很想回家到我的主人身边。他非常爱我，也很想念我。\n请通过下面的按钮联系他，帮我回家。",
-        "contact_owner": "יצירת קשר עם owner",
-        "owner_alerted": "ה owner received notification and will respond shortly.",
-        "contact_action": "Contact",
-        "owner_found_pet": "Hello! I found your pet. Please contact me and I will happily return it to you.",
-        "location_instruction": "Request the other person's location to arrange a meeting.",
-        "request_pet_location": "Get pet location",
-        "location_requested": "Hello! Please share your location so we can meet.",
-        "location_requested_from_owner": "Location requested. Waiting for response.",
-        "share_location": "Share location",
-        "live_location_howto": "Please share your live location with the bot.\n\n📎 → «Location» → «Share live location» → select duration → send.",
-        "request_location": "Please let me know where you are by sharing your location.",
-        "location_shared_response": "Location shared. Please wait for response. Stay nearby until meeting. You'll get a notification when close.",
-        "finder_live_received": "Bot received location from your contact. Please also share your live location to get audio notifications when approaching meeting point.",
-        "alert_eror_location": "Live location seems to have stopped. Please share live location again.",
-        "navigation_hint_owner": "Switch to navigation mode to estimate travel time, then inform the finder of your arrival time.",
-        "navigation_hint_user": "Notify when you arrive or invite to chat if other arrangements needed",
-        "arrive_10": "Arrive in 10 minutes",
-        "arrive_20": "Arrive in 20 minutes",
-        "arrive_30": "Arrive in 30 minutes",
-        "start_chat": "Start chat",
-        "arrival_owner_10": "I'll arrive within 10 minutes, please wait at your location.",
-        "arrival_owner_20": "I'll arrive within 20 minutes, please wait at your location.",
-        "arrival_owner_30": "I'll arrive within 30 minutes, please wait at your location.",
-        "arrival_timer_warning": "You should arrive at the specified point within {select_time}. If delayed or plans changed, update your arrival time through this menu.",
-        "back": "Back",
-        "language_warning": "Warning! Your conversation partner may speak a different language",
-        "accept_chat": "Accept",
-        "invite_text": "Follow {invite_link} to continue communication in {group_name} group.",
-        "owner_chat_offer": "The pet owner invites you to a chat to discuss alternative meeting options.\nThe button below will take you to chat with the pet owner.",
-        "open_chat": "Open chat",
-        "chat_partner_joined_owner": "Partner joined chat successfully. Please join the chat to discuss details.",
-        "proximity_notification": "You're nearby! Enable sound password, look around and you'll meet!",
-        "sound_password": "Sound password",
-        "playing_sound_password": "Playing sound password (30 seconds)...",
+        "pet_info_message": "זהו עמוד החיית המחמד: {pet_name}. גיל: {age} שנים.\n\nאם אתה קורא את זה, אני הלכתי לאיבוד. אני באמת רוצה לחזור הביתה לבעלים שלי. הוא אוהב אותי מאוד ומתגעגע אלי.\nאנא צור איתו קשר באמצעות הכפתור למטה ועזור לי לחזור הביתה.",
+        "contact_owner": "יצירת קשר עם הבעלים",
+        "owner_alerted": "הבעלים קיבל הודעה ויענה בקרוב.",
+        "contact_action": "יצירת קשר",
+        "owner_found_pet": "שלום! מצאתי את חיית המחמד שלך. אנא צור איתי קשר ואחזיר אותה בשמחה.",
+        "location_instruction": "בקש את המיקום של האדם השני כדי לתאם פגישה.",
+        "request_pet_location": "קבל מיקום חיית מחמד",
+        "location_requested": "שלום! אנא שתף את המיקום שלך כדי שנוכל להיפגש.",
+        "location_requested_from_owner": "המיקום התבקש. ממתין לתגובה.",
+        "share_location": "שתף מיקום",
+        "live_location_howto": "אנא שתף את המיקום החי שלך עם הבוט.\n\n📎 → «מיקום» → «שתף מיקום חי» → בחר משך זמן → שלח.",
+        "request_location": "אנא הודע לי איפה אתה על ידי שיתוף המיקום שלך.",
+        "location_shared_response": "המיקום שותף. אנא המתן לתגובה. הישאר בקרבת מקום עד הפגישה. תקבל הודעה כשתהיה קרוב.",
+        "finder_live_received": "הבוט קיבל מיקום מאיש הקשר שלך. אנא שתף גם את המיקום החי שלך כדי לקבל התראות קוליות כשאתה מתקרב לנקודת הפגישה.",
+        "alert_error_location": "נראה שהמיקום החי הפסיק. אנא שתף את המיקום החי שלך שוב.",
+        "navigation_hint_owner": "עבור למצב ניווט כדי להעריך זמן נסיעה, ואז הודע למוצא על זמן ההגעה שלך.",
+        "navigation_hint_user": "הודע כשאתה מגיע או הזמן לצ'אט אם נדרשים הסדרים אחרים",
+        "arrive_10": "מגיע בעוד 10 דקות",
+        "arrive_20": "מגיע בעוד 20 דקות",
+        "arrive_30": "מגיע בעוד 30 דקות",
+        "arrive_60": "מגיע בעוד שעה",
+        "start_chat": "התחל צ'אט",
+        "arrival_owner_10": "אני אגיע תוך 10 דקות, אנא המתן לי במיקום שלך.",
+        "arrival_owner_20": "אני אגיע תוך 20 דקות, אנא המתן לי במיקום שלך.",
+        "arrival_owner_30": "אני אגיע תוך 30 דקות, אנא המתן לי במיקום שלך.",
+        "arrival_owner_60": "אני אגיע תוך שעה, אנא המתן לי במיקום שלך.",
+        "arrival_timer_warning": "אתה צריך להגיע לנקודה המצוינת תוך {select_time}. אם אתה מתעכב או התוכניות משתנות, עדכן את זמן ההגעה שלך דרך התפריט הזה.",
+        "back": "חזור",
+        "language_warning": "אזהרה! שותף השיחה שלך עשוי לדבר שפה אחרת",
+        "accept_chat": "קבל",
+        "invite_text": "עקוב אחר {invite_link} כדי להמשיך בתקשורת בקבוצה {group_name}.",
+        "owner_chat_offer": "בעל חיית המחמד מזמין אותך לצ'אט כדי לדון באפשרויות פגישה חלופיות.\nהכפתור למטה ייקח אותך לצ'אט עם בעל חיית המחמד.",
+        "open_chat": "פתח צ'אט",
+        "chat_partner_joined_owner": "שותף השיחה הצטרף בהצלחה לצ'אט. אנא הצטרף גם אתה לצ'אט כדי לדון בפרטים.",
+        "proximity_notification": "אתה בקרבת מקום! הפעל סיסמת קול, הסתכל סביב ותפגשו!",
+        "sound_password": "סיסמת קול",
+        "playing_sound_password": "מנגן סיסמת קול (30 שניות)...",
         "after_sound_prompt": "*==============================*",
-        "mission_done": "Mission accomplished!",
-        "check_owner_location": "Check owner's location",
-        "check_finder_location": "Check finder's location",
-        "owner_location_unavailable": "Sorry, owner's current location is temporarily unavailable.",
-        "finder_location_unavailable": "Sorry, finder's current location is temporarily unavailable.",
-    },
+        "mission_done": "המשימה הושלמה!",
+        "check_owner_location": "בדוק מיקום הבעלים",
+        "check_finder_location": "בדוק מיקום המוצא",
+        "owner_location_unavailable": "מצטער, המיקום הנוכחי של הבעלים אינו זמין זמנית.",
+        "finder_location_unavailable": "מצטער, המיקום הנוכחי של המוצא אינו זמין זמנית.",
+    }
 }
 
-
 DEFAULT_LANG = "en"
+
 
 def normalize_lang(lang: str | None) -> str:
     if not lang:
         return DEFAULT_LANG
     base = lang.split("-")[0].lower()
     return base if base in locales else DEFAULT_LANG
+
 
 class I18n:
     def __init__(self, data: Dict[str, Dict[str, str]], default: str = DEFAULT_LANG):
@@ -1630,5 +1800,6 @@ class I18n:
             return s.format(**kwargs)
         except Exception:
             return s
+
 
 I18N = I18n(locales, DEFAULT_LANG)

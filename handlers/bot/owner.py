@@ -322,9 +322,15 @@ async def owner_eta_choice(cb: CallbackQuery):
             pass
         return
 
+    # извлекаем выбранное значение (10/20/30/1h)
     try:
-        _parts = cb.data.split(":")
-        minutes = int(_parts[-1])
+        tail = cb.data.split(":")[-1]
+        if tail == "1h":
+            minutes = 60
+            is_hour = True
+        else:
+            minutes = int(tail)
+            is_hour = False
     except Exception:
         try:
             await cb.answer()
@@ -332,13 +338,14 @@ async def owner_eta_choice(cb: CallbackQuery):
             pass
         return
 
-    if minutes not in (10, 20, 30):
+    if minutes not in (10, 20, 30, 60):
         try:
             await cb.answer()
         except Exception:
             pass
         return
 
+    # убрать старую клавиатуру
     try:
         await cb.message.edit_reply_markup(reply_markup=None)
     except Exception:
@@ -356,10 +363,10 @@ async def owner_eta_choice(cb: CallbackQuery):
             10: "arrival_owner_10",
             20: "arrival_owner_20",
             30: "arrival_owner_30",
+            60: "arrival_owner_60",   
         }
         eta_key = eta_key_map.get(minutes)
 
-        # 1) сообщение нашедшему «Прибуду в течение ХХ минут...»
         try:
             await cb.bot.send_message(
                 chat_id=int(finder_id),
@@ -368,7 +375,6 @@ async def owner_eta_choice(cb: CallbackQuery):
         except Exception:
             pass
 
-    # 2) предупреждение владельцу + повторное меню
         try:
             await cb.message.answer(
                 i18n.t(
@@ -390,20 +396,17 @@ async def owner_eta_choice(cb: CallbackQuery):
 #CHAT
 @router.callback_query(F.data == "owner:start_chat")
 async def owner_start_chat(cb: CallbackQuery):
-    # только владелец
     if int(cb.from_user.id) != int(OWNER_ID):
         try: await cb.answer()
         except: pass
         return
 
-    # скрыть прошлую клавиатуру (меню ETA)
     try:
         await cb.message.edit_reply_markup(reply_markup=None)
     except Exception:
         pass
 
     i18n = _I18N
-    # показать предупреждение + две кнопки (Принимаю/Назад)
     try:
         await cb.message.answer(
             i18n.t(get_owner_lang(), "language_warning"),
@@ -418,20 +421,17 @@ async def owner_start_chat(cb: CallbackQuery):
 
 @router.callback_query(F.data == "owner:chat_back")
 async def owner_chat_back(cb: CallbackQuery):
-    # только владелец
     if int(cb.from_user.id) != int(OWNER_ID):
         try: await cb.answer()
         except: pass
         return
 
-    # убрать клавиатуру согласия
     try:
         await cb.message.edit_reply_markup(reply_markup=None)
     except Exception:
         pass
 
     i18n = _I18N
-    # вернуть предыдущее меню ETA владельцу
     try:
         await cb.message.answer(
             i18n.t(get_owner_lang(), "arrival_timer_warning"),
@@ -446,13 +446,11 @@ async def owner_chat_back(cb: CallbackQuery):
 
 @router.callback_query(F.data == "owner:chat_accept")
 async def owner_chat_accept(cb: CallbackQuery):
-    # только владелец
     if int(cb.from_user.id) != int(OWNER_ID):
         try: await cb.answer()
         except: pass
         return
 
-    # убрать клавиатуру согласия
     try:
         await cb.message.edit_reply_markup(reply_markup=None)
     except Exception:
@@ -460,7 +458,6 @@ async def owner_chat_accept(cb: CallbackQuery):
 
     i18n = _I18N
 
-    # активный нашедший
     finder_id = get_active()
     if finder_id:
         finder_row = get_finder(finder_id) or {}
@@ -669,7 +666,7 @@ async def sound_check_finder_location(cb: CallbackQuery):
             await cb.bot.send_message(
                 cb.message.chat.id,
                 i18n.t(get_owner_lang(), "after_sound_prompt"),
-                reply_markup=kb_sound_followup_owner(get_owner_lang(), i18n),  # для владельца
+                reply_markup=kb_owner_arrival_menu(get_owner_lang(), i18n),  # для владельца
             )
         except Exception:
             pass
