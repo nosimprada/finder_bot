@@ -6,7 +6,7 @@ from aiogram import Router, F
 from aiogram.types import CallbackQuery, FSInputFile, Message
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
-from aiogram.types import ChatMemberUpdated
+from aiogram.types import ChatMemberUpdated 
 
 from config import GROUP_CHAT_ID, GROUP_INVITE_LINK, OWNER_ID, OWNER_LANG, Stage, get_owner_lang
 from keyboards.markup import kb_finder_share_location, kb_open_group_link, kb_owner_arrival_menu, kb_owner_chat_consent, kb_sound_followup_finder, kb_sound_followup_owner

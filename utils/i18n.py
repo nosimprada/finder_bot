@@ -1286,7 +1286,7 @@ locales: Dict[str, Dict[str, str]] = {
         "request_location": "Prašome pranešti man, kur esate, pasidalinant savo vieta.",
         "location_shared_response": "Vieta pasidalinta. Prašome laukti atsakymo. Likite arti iki susitikimo. Gausite pranešimą, kai būsite arti.",
         "finder_live_received": "Botas gavo vietą iš jūsų kontakto. Prašome taip pat pasidalinti savo tiesiogine vieta, kad gautumėte garso pranešimus artėjant prie susitikimo vietos.",
-        "alert_eror_location": "Atrodo, tiesioginės vietos transliacija sustojo. Prašome dar kartą pasidalinti savo tiesiogine vieta.",
+        "alert_error_location": "Atrodo, tiesioginės vietos transliacija sustojo. Prašome dar kartą pasidalinti savo tiesiogine vieta.",
         "navigation_hint_owner": (
             "Perjunkite į navigacijos režimą, kad įvertintumėte kelionės laiką, "
             "tada praneškite radusiajam savo atvykimo laiką."

@@ -181,7 +181,7 @@ async def _maybe_reprompt_owner_once(bot: Bot, owner_id: int, finder_id: int, ow
     _missing_notified[key] = True
     print(f"[WATCHER] reprompt OWNER (once) for (owner={owner_id}, finder={finder_id})")
     try:
-        await bot.send_message(owner_id, i18n.t(owner_lang, "alert_eror_location"))
+        await bot.send_message(owner_id, i18n.t(owner_lang, "alert_error_location"))
     except Exception as e:
         print(f"[WATCHER][WARN] failed to notify owner {owner_id}: {e}")
 
@@ -193,7 +193,7 @@ async def _maybe_reprompt_finder_once(bot: Bot, owner_id: int, finder_id: int, f
     _missing_notified[key] = True
     print(f"[WATCHER] reprompt FINDER (once) for (owner={owner_id}, finder={finder_id})")
     try:
-        await bot.send_message(finder_id, i18n.t(finder_lang, "alert_eror_location"))
+        await bot.send_message(finder_id, i18n.t(finder_lang, "alert_error_location"))
     except Exception as e:
         print(f"[WATCHER][WARN] failed to notify finder {finder_id}: {e}")
 
