@@ -8,6 +8,7 @@ from typing import Optional
 
 from aiogram import Bot
 from aiogram.types import Message, FSInputFile
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 from config import INSTRUCTION_VIDEO_FILE_ID, OWNER_ID, OWNER_LANG, PET_NAME, PET_BIRTH_YEAR, PET_PHOTO_PATH, SOUND_MP3_FILE_ID, get_owner_lang
 from keyboards.markup import kb_finder_share_location, kb_finder_welcome, kb_owner_contact, kb_owner_request_only, kb_owner_share_location, kb_sound_followup_finder, kb_sound_followup_owner, kb_sound_password
@@ -181,6 +182,14 @@ async def notify_owner_about_finder(bot: Bot, i18n: I18n | None = None) -> None:
     i18n = i18n or _I18N
     text = i18n.t(get_owner_lang(), "owner_found_pet") + "\n\n👇"
 
+    await bot.send_message(
+            chat_id=OWNER_ID,
+            text="*==============================*",
+            reply_markup=ReplyKeyboardMarkup(
+                keyboard=[[KeyboardButton(text="Завершить чат")]],
+                resize_keyboard=True
+            )
+        )
     photo_path = Path(PET_PHOTO_PATH)
     if photo_path.is_file():
         await bot.send_photo(

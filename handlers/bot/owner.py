@@ -15,9 +15,38 @@ from utils.i18n import I18N as _I18N
 from utils.finder_store import finish_active, get_active, get_finder, get_stage, set_stage
 from utils.location_watcher import ensure_watcher_for_pair, get_finder_point, get_owner_point, set_owner_live
 from utils.message_log_store import clear_chat, delete_all_logged_messages
-from utils.outbox import notify_finder_request_location, send_finder_pet_card, send_live_location_instructions, send_owner_location_requested, send_owner_request_menu, send_sound_password_for_finder, send_sound_password_for_owner
+from utils.outbox import notify_finder_request_location, notify_owner_about_finder, send_finder_pet_card, send_live_location_instructions, send_owner_location_requested, send_owner_request_menu, send_sound_password_for_finder, send_sound_password_for_owner
 
 router = Router(name="owner")
+
+@router.message(F.text == "Завершить чат")
+async def owner_finish_chat(message: Message):
+    if int(message.from_user.id) != int(OWNER_ID):
+        return
+
+    await message.answer(
+        text="*==============================*",
+        reply_markup=None
+    )
+
+    chat_id = message.chat.id
+
+    try:
+        await delete_all_logged_messages(message.bot, chat_id)
+    except Exception:
+        pass
+
+    try:
+        next_active_id = finish_active(mark_completed=True)
+    except Exception:
+        next_active_id = None
+
+    if next_active_id:
+        try:
+            print(f"[OWNER] Notifying next active finder {next_active_id}")
+            await notify_owner_about_finder(message.bot)
+        except Exception:
+            pass
 
 
 @router.callback_query(F.data == "owner:contact")
