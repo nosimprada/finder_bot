@@ -85,7 +85,13 @@ async def preload_telegram_file_ids(bot: Bot) -> None:
         cfg.SOUND_MP3_FILE_ID = sound_id
     except Exception:
         pass
-    
+
+async def set_custom_bot_description(bot: Bot, description: str) -> None:
+    try:
+        await bot.set_my_description(description=description)
+    except Exception as e:
+        print(f"[set_custom_bot_description] failed: {e}")
+
 async def main() -> None:
     bot = LoggingBot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher(storage=MemoryStorage())
@@ -95,6 +101,7 @@ async def main() -> None:
 
     await refresh_owner_lang(bot)
     await preload_telegram_file_ids(bot)
+    await set_custom_bot_description(bot, "🐕 A bot for finding lost pets.")
     await dp.start_polling(bot)
     init_db()
 
